@@ -13,3 +13,5 @@ A custom python script was used to concatenate all individual read count text fi
 # R scripts
 R was used for the differential expression analysis and figure creation. Two annotated scripts used for this analysis can be found in the /R_scripts folder.
 
+# Custom gene reference sequences
+Custom sequences which were used to blast against all gene annotations generated from InterProScan are available in the gene-query-seqs folder.
