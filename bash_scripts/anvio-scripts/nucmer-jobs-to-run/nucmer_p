@@ -1,0 +1,43 @@
+#!/bin/bash
+#SBATCH --partition=compute # Queue selection
+#SBATCH --job-name=nuc_p # Job name
+#SBATCH --mail-type=ALL# Mail events (BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=dgellermcgrath@gmail.com # Where to send mail
+#SBATCH --ntasks=1 # Run on one CPU
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=36
+#SBATCH --mem=180gb # Job memory request
+#SBATCH --time=2-00:00:00 # Time limit hrs:min:sec
+#SBATCH --output=logs/nucmer_p_%j.log# Standard output/error
+#SBATCH --qos=unlim
+#
+cd /vortexfs1/scratch/dgellermcgrath
+#
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1526 draft_mags/CarAnox_mtb2_1526.fa UBP3.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1679 draft_mags/CarAnox_mtb2_1679.fa Nitrospinota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1593 draft_mags/CarAnox_mtb2_1593.fa Fermentibacterota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_723 draft_mags/CarAnox_mtb2_723.fa Bdellovibrionota_B.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1534 draft_mags/CarAnox_mtb2_1534.fa Bdellovibrionota_B.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_599 draft_mags/CarAnox_mtb2_599.fa SAR324.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1535 draft_mags/CarAnox_mtb2_1535.fa SAR324.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_293 draft_mags/CarAnox_mtb2_293.fa SAR324.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_724 draft_mags/CarAnox_mtb2_724.fa Ratteibacteria.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_254 draft_mags/CarAnox_mtb2_254.fa Acidobacteriota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_781 draft_mags/CarAnox_mtb2_781.fa Acidobacteriota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1433 draft_mags/CarAnox_mtb2_1433.fa Acidobacteriota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_101 draft_mags/CarAnox_mtb2_101.fa Acidobacteriota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1010 draft_mags/CarAnox_mtb2_1010.fa Acidobacteriota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_163 draft_mags/CarAnox_mtb2_163.fa Bipolaricaulota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1630 draft_mags/CarAnox_mtb2_1630.fa Bipolaricaulota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1584 draft_mags/CarAnox_mtb2_1584.fa Bipolaricaulota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1252 draft_mags/CarAnox_mtb2_1252.fa Bipolaricaulota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_645 draft_mags/CarAnox_mtb2_645.fa Cyanobacteria.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1499 draft_mags/CarAnox_mtb2_1499.fa GCA-001730085.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_181 draft_mags/CarAnox_mtb2_181.fa Dadabacteria.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1244 draft_mags/CarAnox_mtb2_1244.fa Chloroflexota_B.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1503 draft_mags/CarAnox_mtb2_1503.fa Aenigmarchaeota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1650 draft_mags/CarAnox_mtb2_1650.fa Aenigmarchaeota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_861 draft_mags/CarAnox_mtb2_861.fa Aenigmarchaeota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1413 draft_mags/CarAnox_mtb2_1413.fa Aenigmarchaeota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_524 draft_mags/CarAnox_mtb2_524.fa Dependentiae.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_956 draft_mags/CarAnox_mtb2_956.fa Aerophobota.fa

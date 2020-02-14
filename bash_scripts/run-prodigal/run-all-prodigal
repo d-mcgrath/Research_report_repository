@@ -1,0 +1,16 @@
+#!/bin/bash
+sbatch prodigal-10.sh
+sbatch prodigal-11.sh
+sbatch prodigal-12.sh
+sbatch prodigal-13.sh
+sbatch prodigal-14.sh
+sbatch prodigal-15.sh
+sbatch prodigal-16.sh
+sbatch prodigal-2.sh
+sbatch prodigal-3.sh
+sbatch prodigal-4.sh
+sbatch prodigal-5.sh
+sbatch prodigal-6.sh
+sbatch prodigal-7.sh
+sbatch prodigal-8.sh
+sbatch prodigal-9.sh

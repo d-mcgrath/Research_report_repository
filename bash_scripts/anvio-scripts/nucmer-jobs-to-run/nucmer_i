@@ -1,0 +1,51 @@
+#!/bin/bash
+#SBATCH --partition=compute # Queue selection
+#SBATCH --job-name=nuc_i # Job name
+#SBATCH --mail-type=ALL# Mail events (BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=dgellermcgrath@gmail.com # Where to send mail
+#SBATCH --ntasks=1 # Run on one CPU
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=36
+#SBATCH --mem=180gb # Job memory request
+#SBATCH --time=2-00:00:00 # Time limit hrs:min:sec
+#SBATCH --output=logs/nucmer_i_%j.log# Standard output/error
+#SBATCH --qos=unlim
+#
+cd /vortexfs1/scratch/dgellermcgrath
+#
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_341 draft_mags/CarAnox_mtb2_341.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1421 draft_mags/CarAnox_mtb2_1421.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_755 draft_mags/CarAnox_mtb2_755.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_573 draft_mags/CarAnox_mtb2_573.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_907 draft_mags/CarAnox_mtb2_907.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_601 draft_mags/CarAnox_mtb2_601.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_591 draft_mags/CarAnox_mtb2_591.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1627 draft_mags/CarAnox_mtb2_1627.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_636 draft_mags/CarAnox_mtb2_636.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1566 draft_mags/CarAnox_mtb2_1566.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1285 draft_mags/CarAnox_mtb2_1285.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_561 draft_mags/CarAnox_mtb2_561.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1423 draft_mags/CarAnox_mtb2_1423.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1312 draft_mags/CarAnox_mtb2_1312.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1079 draft_mags/CarAnox_mtb2_1079.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1131 draft_mags/CarAnox_mtb2_1131.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_914 draft_mags/CarAnox_mtb2_914.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1024 draft_mags/CarAnox_mtb2_1024.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_567 draft_mags/CarAnox_mtb2_567.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_317 draft_mags/CarAnox_mtb2_317.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1224 draft_mags/CarAnox_mtb2_1224.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_522 draft_mags/CarAnox_mtb2_522.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_712 draft_mags/CarAnox_mtb2_712.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_479 draft_mags/CarAnox_mtb2_479.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_815 draft_mags/CarAnox_mtb2_815.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_923 draft_mags/CarAnox_mtb2_923.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_379 draft_mags/CarAnox_mtb2_379.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1604 draft_mags/CarAnox_mtb2_1604.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1023 draft_mags/CarAnox_mtb2_1023.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_196 draft_mags/CarAnox_mtb2_196.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1414 draft_mags/CarAnox_mtb2_1414.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_552 draft_mags/CarAnox_mtb2_552.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1422 draft_mags/CarAnox_mtb2_1422.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_623 draft_mags/CarAnox_mtb2_623.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_691 draft_mags/CarAnox_mtb2_691.fa Omnitrophota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_334 draft_mags/CarAnox_mtb2_334.fa Omnitrophota.fa

@@ -1,0 +1,16 @@
+#!/bin/bash
+sbatch anti-on-prod-10.sh
+sbatch anti-on-prod-11.sh
+sbatch anti-on-prod-12.sh
+sbatch anti-on-prod-13.sh
+sbatch anti-on-prod-14.sh
+sbatch anti-on-prod-15.sh
+sbatch anti-on-prod-16.sh
+sbatch anti-on-prod-2.sh
+sbatch anti-on-prod-3.sh
+sbatch anti-on-prod-4.sh
+sbatch anti-on-prod-5.sh
+sbatch anti-on-prod-6.sh
+sbatch anti-on-prod-7.sh
+sbatch anti-on-prod-8.sh
+sbatch anti-on-prod-9.sh

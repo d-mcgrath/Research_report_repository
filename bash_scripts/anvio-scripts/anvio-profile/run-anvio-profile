@@ -1,0 +1,17 @@
+#!/bin/bash
+sbatch scripts/anvio-profile/anvio-profile-1.sh
+sbatch scripts/anvio-profile/anvio-profile-2.sh
+sbatch scripts/anvio-profile/anvio-profile-3.sh
+sbatch scripts/anvio-profile/anvio-profile-4.sh
+sbatch scripts/anvio-profile/anvio-profile-5.sh
+sbatch scripts/anvio-profile/anvio-profile-6.sh
+sbatch scripts/anvio-profile/anvio-profile-7.sh
+sbatch scripts/anvio-profile/anvio-profile-8.sh
+sbatch scripts/anvio-profile/anvio-profile-9.sh
+sbatch scripts/anvio-profile/anvio-profile-10.sh
+sbatch scripts/anvio-profile/anvio-profile-11.sh
+sbatch scripts/anvio-profile/anvio-profile-12.sh
+sbatch scripts/anvio-profile/anvio-profile-13.sh
+sbatch scripts/anvio-profile/anvio-profile-14.sh
+sbatch scripts/anvio-profile/anvio-profile-15.sh
+sbatch scripts/anvio-profile/anvio-profile-16.sh

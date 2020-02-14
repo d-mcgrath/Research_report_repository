@@ -1,0 +1,51 @@
+#!/bin/bash
+#SBATCH --partition=compute # Queue selection
+#SBATCH --job-name=nuc_o # Job name
+#SBATCH --mail-type=ALL# Mail events (BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=dgellermcgrath@gmail.com # Where to send mail
+#SBATCH --ntasks=1 # Run on one CPU
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=36
+#SBATCH --mem=180gb # Job memory request
+#SBATCH --time=2-00:00:00 # Time limit hrs:min:sec
+#SBATCH --output=logs/nucmer_o_%j.log# Standard output/error
+#SBATCH --qos=unlim
+#
+cd /vortexfs1/scratch/dgellermcgrath
+#
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_420 draft_mags/CarAnox_mtb2_420.fa Halobacterota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1316 draft_mags/CarAnox_mtb2_1316.fa Crenarchaeota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1015 draft_mags/CarAnox_mtb2_1015.fa Crenarchaeota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_557 draft_mags/CarAnox_mtb2_557.fa Crenarchaeota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_672 draft_mags/CarAnox_mtb2_672.fa Crenarchaeota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_803 draft_mags/CarAnox_mtb2_803.fa Crenarchaeota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_828 draft_mags/CarAnox_mtb2_828.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1268 draft_mags/CarAnox_mtb2_1268.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_982 draft_mags/CarAnox_mtb2_982.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1305 draft_mags/CarAnox_mtb2_1305.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_954 draft_mags/CarAnox_mtb2_954.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1284 draft_mags/CarAnox_mtb2_1284.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_663 draft_mags/CarAnox_mtb2_663.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_826 draft_mags/CarAnox_mtb2_826.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1369 draft_mags/CarAnox_mtb2_1369.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1075 draft_mags/CarAnox_mtb2_1075.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_920 draft_mags/CarAnox_mtb2_920.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1037 draft_mags/CarAnox_mtb2_1037.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_890 draft_mags/CarAnox_mtb2_890.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1441 draft_mags/CarAnox_mtb2_1441.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1123 draft_mags/CarAnox_mtb2_1123.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1071 draft_mags/CarAnox_mtb2_1071.fa Verrucomicrobiota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_707 draft_mags/CarAnox_mtb2_707.fa UAP2.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_748 draft_mags/CarAnox_mtb2_748.fa UAP2.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1130 draft_mags/CarAnox_mtb2_1130.fa UAP2.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_419 draft_mags/CarAnox_mtb2_419.fa UAP2.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_872 draft_mags/CarAnox_mtb2_872.fa UAP2.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_563 draft_mags/CarAnox_mtb2_563.fa FEN-1099.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1299 draft_mags/CarAnox_mtb2_1299.fa UBA10199.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_662 draft_mags/CarAnox_mtb2_662.fa UBA10199.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1290 draft_mags/CarAnox_mtb2_1290.fa UBA10199.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_941 draft_mags/CarAnox_mtb2_941.fa UBA10199.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1254 draft_mags/CarAnox_mtb2_1254.fa Gemmatimonadota_A.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1655 draft_mags/CarAnox_mtb2_1655.fa Verrucomicrobiota_A.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_244 draft_mags/CarAnox_mtb2_244.fa Fibrobacterota.fa
+MUMmer3.23/nucmer --minmatch 500 -p hits/CarAnox_mtb2_1389 draft_mags/CarAnox_mtb2_1389.fa UBP17.fa

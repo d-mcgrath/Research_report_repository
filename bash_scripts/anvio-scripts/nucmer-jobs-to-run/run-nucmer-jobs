@@ -1,0 +1,17 @@
+#!/bin/bash
+sbatch scripts/nucmer-jobs-to-run/nucmer_a
+sbatch scripts/nucmer-jobs-to-run/nucmer_b
+sbatch scripts/nucmer-jobs-to-run/nucmer_c
+sbatch scripts/nucmer-jobs-to-run/nucmer_d
+sbatch scripts/nucmer-jobs-to-run/nucmer_e
+sbatch scripts/nucmer-jobs-to-run/nucmer_f
+sbatch scripts/nucmer-jobs-to-run/nucmer_g
+sbatch scripts/nucmer-jobs-to-run/nucmer_h
+sbatch scripts/nucmer-jobs-to-run/nucmer_i
+sbatch scripts/nucmer-jobs-to-run/nucmer_j
+sbatch scripts/nucmer-jobs-to-run/nucmer_k
+sbatch scripts/nucmer-jobs-to-run/nucmer_l
+sbatch scripts/nucmer-jobs-to-run/nucmer_m
+sbatch scripts/nucmer-jobs-to-run/nucmer_n
+sbatch scripts/nucmer-jobs-to-run/nucmer_o
+sbatch scripts/nucmer-jobs-to-run/nucmer_p

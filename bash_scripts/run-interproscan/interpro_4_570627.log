@@ -1,0 +1,723 @@
+02/02/2020 14:02:20:167 Welcome to InterProScan-5.40-77.0
+02/02/2020 14:02:20:168 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 14:02:34:571 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1413-final-gbk-AA.fa
+02/02/2020 14:02:34:573 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 14:02:56:115 25% completed
+02/02/2020 14:04:26:046 52% completed
+02/02/2020 14:07:21:312 75% completed
+02/02/2020 14:14:15:178 91% completed
+02/02/2020 14:14:25:947 100% done:  InterProScan analyses completed 
+
+02/02/2020 14:14:27:197 Welcome to InterProScan-5.40-77.0
+02/02/2020 14:14:27:198 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 14:14:41:810 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1414-final-gbk-AA.fa
+02/02/2020 14:14:41:813 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 14:15:20:046 25% completed
+02/02/2020 14:18:20:734 50% completed
+02/02/2020 14:27:36:197 75% completed
+02/02/2020 14:27:58:868 90% completed
+02/02/2020 14:32:53:949 100% done:  InterProScan analyses completed 
+
+02/02/2020 14:32:55:224 Welcome to InterProScan-5.40-77.0
+02/02/2020 14:32:55:225 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 14:33:09:904 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1415-final-gbk-AA.fa
+02/02/2020 14:33:09:906 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 14:33:17:941 87% completed
+02/02/2020 14:33:18:143 Match lookup info: 0% of the 5310 unique input sequences were found in the match lookup server. 
+ERROR: uk.ac.ebi.interpro.scan.management.model.implementations.RunBinaryStep - Command line failed with exit code: 17
+Command: bin/prosite/ps_scan.pl -d data/prosite/2019_01/prosite.dat -w bin/prosite/pfsearch -s -m -o gff -y data/prosite/2019_01/prosite_models /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_143259097_8dd//jobPrositeProfiles/000000000001_000000001000.fasta 
+Error output from binary:
+Unable to create /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_143259097_8dd//jobPrositeProfiles//pn057 at bin/prosite/ps_scan.pl line 923.
+
+ERROR: uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener - Execution thrown when attempting to executeInTransaction the StepExecution.  All database activity rolled back.
+java.lang.IllegalStateException: Command line failed with exit code: 17
+Command: bin/prosite/ps_scan.pl -d data/prosite/2019_01/prosite.dat -w bin/prosite/pfsearch -s -m -o gff -y data/prosite/2019_01/prosite_models /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_143259097_8dd//jobPrositeProfiles/000000000001_000000001000.fasta 
+Error output from binary:
+Unable to create /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_143259097_8dd//jobPrositeProfiles//pn057 at bin/prosite/ps_scan.pl line 923.
+
+	at uk.ac.ebi.interpro.scan.management.model.implementations.RunBinaryStep.execute(RunBinaryStep.java:200)
+	at uk.ac.ebi.interpro.scan.jms.activemq.StepExecutionTransactionImpl.executeInTransaction(StepExecutionTransactionImpl.java:86)
+	at jdk.internal.reflect.GeneratedMethodAccessor100.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy142.executeInTransaction(Unknown Source)
+	at uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener.onMessage(LocalJobQueueListener.java:193)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:761)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:699)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:674)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:318)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:257)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1189)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1179)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1076)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+ERROR: uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener - The exception is :
+java.lang.IllegalStateException: Command line failed with exit code: 17
+Command: bin/prosite/ps_scan.pl -d data/prosite/2019_01/prosite.dat -w bin/prosite/pfsearch -s -m -o gff -y data/prosite/2019_01/prosite_models /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_143259097_8dd//jobPrositeProfiles/000000000001_000000001000.fasta 
+Error output from binary:
+Unable to create /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_143259097_8dd//jobPrositeProfiles//pn057 at bin/prosite/ps_scan.pl line 923.
+
+	at uk.ac.ebi.interpro.scan.management.model.implementations.RunBinaryStep.execute(RunBinaryStep.java:200)
+	at uk.ac.ebi.interpro.scan.jms.activemq.StepExecutionTransactionImpl.executeInTransaction(StepExecutionTransactionImpl.java:86)
+	at jdk.internal.reflect.GeneratedMethodAccessor100.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy142.executeInTransaction(Unknown Source)
+	at uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener.onMessage(LocalJobQueueListener.java:193)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:761)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:699)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:674)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:318)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:257)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1189)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1179)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1076)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+ERROR: uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener - 2. The exception is :java.lang.IllegalStateException: Command line failed with exit code: 17
+Command: bin/prosite/ps_scan.pl -d data/prosite/2019_01/prosite.dat -w bin/prosite/pfsearch -s -m -o gff -y data/prosite/2019_01/prosite_models /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_143259097_8dd//jobPrositeProfiles/000000000001_000000001000.fasta 
+Error output from binary:
+Unable to create /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_143259097_8dd//jobPrositeProfiles//pn057 at bin/prosite/ps_scan.pl line 923.
+
+ERROR: uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener - StepExecution with errors - stepName: stepPrositeProfilesRunBinary
+WARN : uk.ac.ebi.interpro.scan.jms.master.StandaloneBlackBoxMaster - StepInstance 207 is being re-run following a failure.
+02/02/2020 14:57:35:271 90% completed
+02/02/2020 15:06:22:070 100% done:  InterProScan analyses completed 
+
+02/02/2020 15:06:23:350 Welcome to InterProScan-5.40-77.0
+02/02/2020 15:06:23:351 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 15:06:38:020 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1419-final-gbk-AA.fa
+02/02/2020 15:06:38:022 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 15:06:45:498 Match lookup info: 0% of the 2103 unique input sequences were found in the match lookup server. 
+ERROR: uk.ac.ebi.interpro.scan.management.model.implementations.RunBinaryStep - Command line failed with exit code: 17
+Command: bin/prosite/ps_scan.pl -d data/prosite/2019_01/prosite.dat -w bin/prosite/pfsearch -s -m -o gff -y data/prosite/2019_01/prosite_models /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_150627298_57n6//jobPrositeProfiles/000000000001_000000001000.fasta 
+Error output from binary:
+Unable to create /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_150627298_57n6//jobPrositeProfiles//pn057 at bin/prosite/ps_scan.pl line 923.
+
+ERROR: uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener - Execution thrown when attempting to executeInTransaction the StepExecution.  All database activity rolled back.
+java.lang.IllegalStateException: Command line failed with exit code: 17
+Command: bin/prosite/ps_scan.pl -d data/prosite/2019_01/prosite.dat -w bin/prosite/pfsearch -s -m -o gff -y data/prosite/2019_01/prosite_models /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_150627298_57n6//jobPrositeProfiles/000000000001_000000001000.fasta 
+Error output from binary:
+Unable to create /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_150627298_57n6//jobPrositeProfiles//pn057 at bin/prosite/ps_scan.pl line 923.
+
+	at uk.ac.ebi.interpro.scan.management.model.implementations.RunBinaryStep.execute(RunBinaryStep.java:200)
+	at uk.ac.ebi.interpro.scan.jms.activemq.StepExecutionTransactionImpl.executeInTransaction(StepExecutionTransactionImpl.java:86)
+	at jdk.internal.reflect.GeneratedMethodAccessor96.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy142.executeInTransaction(Unknown Source)
+	at uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener.onMessage(LocalJobQueueListener.java:193)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:761)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:699)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:674)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:318)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:257)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1189)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1179)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1076)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+ERROR: uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener - The exception is :
+java.lang.IllegalStateException: Command line failed with exit code: 17
+Command: bin/prosite/ps_scan.pl -d data/prosite/2019_01/prosite.dat -w bin/prosite/pfsearch -s -m -o gff -y data/prosite/2019_01/prosite_models /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_150627298_57n6//jobPrositeProfiles/000000000001_000000001000.fasta 
+Error output from binary:
+Unable to create /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_150627298_57n6//jobPrositeProfiles//pn057 at bin/prosite/ps_scan.pl line 923.
+
+	at uk.ac.ebi.interpro.scan.management.model.implementations.RunBinaryStep.execute(RunBinaryStep.java:200)
+	at uk.ac.ebi.interpro.scan.jms.activemq.StepExecutionTransactionImpl.executeInTransaction(StepExecutionTransactionImpl.java:86)
+	at jdk.internal.reflect.GeneratedMethodAccessor96.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy142.executeInTransaction(Unknown Source)
+	at uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener.onMessage(LocalJobQueueListener.java:193)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:761)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:699)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:674)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:318)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:257)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1189)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1179)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1076)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+ERROR: uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener - 2. The exception is :java.lang.IllegalStateException: Command line failed with exit code: 17
+Command: bin/prosite/ps_scan.pl -d data/prosite/2019_01/prosite.dat -w bin/prosite/pfsearch -s -m -o gff -y data/prosite/2019_01/prosite_models /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_150627298_57n6//jobPrositeProfiles/000000000001_000000001000.fasta 
+Error output from binary:
+Unable to create /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_150627298_57n6//jobPrositeProfiles//pn057 at bin/prosite/ps_scan.pl line 923.
+
+ERROR: uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener - StepExecution with errors - stepName: stepPrositeProfilesRunBinary
+WARN : uk.ac.ebi.interpro.scan.jms.master.StandaloneBlackBoxMaster - StepInstance 72 is being re-run following a failure.
+02/02/2020 15:07:43:800 25% completed
+02/02/2020 15:10:28:660 51% completed
+02/02/2020 15:21:05:002 75% completed
+02/02/2020 15:26:54:638 91% completed
+02/02/2020 15:28:10:016 100% done:  InterProScan analyses completed 
+
+02/02/2020 15:28:11:275 Welcome to InterProScan-5.40-77.0
+02/02/2020 15:28:11:276 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 15:28:25:731 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1421-final-gbk-AA.fa
+02/02/2020 15:28:25:734 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 15:29:02:581 26% completed
+02/02/2020 15:31:05:881 50% completed
+02/02/2020 15:40:33:562 75% completed
+02/02/2020 15:42:38:014 90% completed
+02/02/2020 15:49:05:407 100% done:  InterProScan analyses completed 
+
+02/02/2020 15:49:06:680 Welcome to InterProScan-5.40-77.0
+02/02/2020 15:49:06:681 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 15:49:21:604 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1422-final-gbk-AA.fa
+02/02/2020 15:49:21:606 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 15:50:07:345 25% completed
+02/02/2020 15:53:46:106 50% completed
+02/02/2020 16:02:43:939 76% completed
+02/02/2020 16:06:33:491 90% completed
+02/02/2020 16:07:49:919 100% done:  InterProScan analyses completed 
+
+02/02/2020 16:07:51:193 Welcome to InterProScan-5.40-77.0
+02/02/2020 16:07:51:194 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 16:08:05:101 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1423-final-gbk-AA.fa
+02/02/2020 16:08:05:103 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 16:08:34:507 26% completed
+02/02/2020 16:11:46:346 50% completed
+02/02/2020 16:22:09:993 75% completed
+02/02/2020 16:28:49:336 90% completed
+02/02/2020 16:29:10:697 100% done:  InterProScan analyses completed 
+
+02/02/2020 16:29:11:981 Welcome to InterProScan-5.40-77.0
+02/02/2020 16:29:11:983 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 16:29:26:225 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1424-final-gbk-AA.fa
+02/02/2020 16:29:26:227 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 16:29:43:655 62% completed
+02/02/2020 16:29:44:683 87% completed
+02/02/2020 16:29:45:031 Match lookup info: 0% of the 10869 unique input sequences were found in the match lookup server. 
+ERROR: uk.ac.ebi.interpro.scan.management.model.implementations.RunBinaryStep - Command line failed with exit code: 17
+Command: bin/prosite/ps_scan.pl -d data/prosite/2019_01/prosite.dat -w bin/prosite/pfsearch -s -m -o gff -y data/prosite/2019_01/prosite_models /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_162915864_7py//jobPrositeProfiles/000000000001_000000001000.fasta 
+Error output from binary:
+Unable to create /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_162915864_7py//jobPrositeProfiles//pn057 at bin/prosite/ps_scan.pl line 923.
+
+ERROR: uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener - Execution thrown when attempting to executeInTransaction the StepExecution.  All database activity rolled back.
+java.lang.IllegalStateException: Command line failed with exit code: 17
+Command: bin/prosite/ps_scan.pl -d data/prosite/2019_01/prosite.dat -w bin/prosite/pfsearch -s -m -o gff -y data/prosite/2019_01/prosite_models /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_162915864_7py//jobPrositeProfiles/000000000001_000000001000.fasta 
+Error output from binary:
+Unable to create /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_162915864_7py//jobPrositeProfiles//pn057 at bin/prosite/ps_scan.pl line 923.
+
+	at uk.ac.ebi.interpro.scan.management.model.implementations.RunBinaryStep.execute(RunBinaryStep.java:200)
+	at uk.ac.ebi.interpro.scan.jms.activemq.StepExecutionTransactionImpl.executeInTransaction(StepExecutionTransactionImpl.java:86)
+	at jdk.internal.reflect.GeneratedMethodAccessor98.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy142.executeInTransaction(Unknown Source)
+	at uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener.onMessage(LocalJobQueueListener.java:193)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:761)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:699)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:674)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:318)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:257)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1189)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1179)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1076)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+ERROR: uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener - The exception is :
+java.lang.IllegalStateException: Command line failed with exit code: 17
+Command: bin/prosite/ps_scan.pl -d data/prosite/2019_01/prosite.dat -w bin/prosite/pfsearch -s -m -o gff -y data/prosite/2019_01/prosite_models /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_162915864_7py//jobPrositeProfiles/000000000001_000000001000.fasta 
+Error output from binary:
+Unable to create /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_162915864_7py//jobPrositeProfiles//pn057 at bin/prosite/ps_scan.pl line 923.
+
+	at uk.ac.ebi.interpro.scan.management.model.implementations.RunBinaryStep.execute(RunBinaryStep.java:200)
+	at uk.ac.ebi.interpro.scan.jms.activemq.StepExecutionTransactionImpl.executeInTransaction(StepExecutionTransactionImpl.java:86)
+	at jdk.internal.reflect.GeneratedMethodAccessor98.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy142.executeInTransaction(Unknown Source)
+	at uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener.onMessage(LocalJobQueueListener.java:193)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:761)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:699)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:674)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:318)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:257)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1189)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1179)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1076)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+ERROR: uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener - 2. The exception is :java.lang.IllegalStateException: Command line failed with exit code: 17
+Command: bin/prosite/ps_scan.pl -d data/prosite/2019_01/prosite.dat -w bin/prosite/pfsearch -s -m -o gff -y data/prosite/2019_01/prosite_models /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_162915864_7py//jobPrositeProfiles/000000000001_000000001000.fasta 
+Error output from binary:
+Unable to create /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/temp/pn057_20200202_162915864_7py//jobPrositeProfiles//pn057 at bin/prosite/ps_scan.pl line 923.
+
+ERROR: uk.ac.ebi.interpro.scan.jms.worker.LocalJobQueueListener - StepExecution with errors - stepName: stepPrositeProfilesRunBinary
+WARN : uk.ac.ebi.interpro.scan.jms.master.StandaloneBlackBoxMaster - StepInstance 283 is being re-run following a failure.
+02/02/2020 17:14:32:538 90% completed
+02/02/2020 17:26:09:303 100% done:  InterProScan analyses completed 
+
+02/02/2020 17:26:10:575 Welcome to InterProScan-5.40-77.0
+02/02/2020 17:26:10:576 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 17:26:24:647 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1425-final-gbk-AA.fa
+02/02/2020 17:26:24:649 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 17:27:00:625 25% completed
+02/02/2020 17:30:55:669 50% completed
+02/02/2020 17:39:24:487 75% completed
+02/02/2020 17:43:28:208 90% completed
+02/02/2020 17:44:24:157 100% done:  InterProScan analyses completed 
+
+02/02/2020 17:44:25:437 Welcome to InterProScan-5.40-77.0
+02/02/2020 17:44:25:439 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 17:44:40:426 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1428-final-gbk-AA.fa
+02/02/2020 17:44:40:427 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 17:44:45:224 33% completed
+02/02/2020 17:44:48:865 66% completed
+02/02/2020 17:44:49:795 83% completed
+02/02/2020 17:44:49:941 Match lookup info: 0% of the 3415 unique input sequences were found in the match lookup server. 
+02/02/2020 18:07:09:680 91% completed
+02/02/2020 18:07:40:481 100% done:  InterProScan analyses completed 
+
+02/02/2020 18:07:41:755 Welcome to InterProScan-5.40-77.0
+02/02/2020 18:07:41:756 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 18:07:55:956 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1429-final-gbk-AA.fa
+02/02/2020 18:07:55:959 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 18:08:03:014 Match lookup info: 0% of the 2042 unique input sequences were found in the match lookup server. 
+02/02/2020 18:08:30:316 25% completed
+02/02/2020 18:12:59:777 50% completed
+02/02/2020 18:24:44:946 75% completed
+02/02/2020 18:34:47:507 90% completed
+02/02/2020 18:35:21:309 100% done:  InterProScan analyses completed 
+
+02/02/2020 18:35:22:596 Welcome to InterProScan-5.40-77.0
+02/02/2020 18:35:22:597 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 18:35:37:036 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1431-final-gbk-AA.fa
+02/02/2020 18:35:37:038 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 18:35:44:083 33% completed
+02/02/2020 18:35:44:189 66% completed
+02/02/2020 18:35:44:297 83% completed
+02/02/2020 18:35:45:493 Match lookup info: 0% of the 3981 unique input sequences were found in the match lookup server. 
+02/02/2020 18:54:12:318 90% completed
+02/02/2020 18:58:33:284 100% done:  InterProScan analyses completed 
+
+02/02/2020 18:58:34:570 Welcome to InterProScan-5.40-77.0
+02/02/2020 18:58:34:571 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 18:58:49:055 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1432-final-gbk-AA.fa
+02/02/2020 18:58:49:057 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 18:58:51:762 33% completed
+02/02/2020 18:58:56:150 66% completed
+02/02/2020 18:58:56:579 83% completed
+02/02/2020 18:58:56:693 Match lookup info: 0% of the 3197 unique input sequences were found in the match lookup server. 
+02/02/2020 19:20:55:693 90% completed
+02/02/2020 19:21:59:031 100% done:  InterProScan analyses completed 
+
+02/02/2020 19:22:00:333 Welcome to InterProScan-5.40-77.0
+02/02/2020 19:22:00:334 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 19:22:14:342 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1433-final-gbk-AA.fa
+02/02/2020 19:22:14:343 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 19:22:16:314 33% completed
+02/02/2020 19:22:21:736 66% completed
+02/02/2020 19:22:22:367 83% completed
+02/02/2020 19:22:22:504 Match lookup info: 0% of the 3056 unique input sequences were found in the match lookup server. 
+02/02/2020 19:43:50:682 90% completed
+02/02/2020 19:44:13:614 100% done:  InterProScan analyses completed 
+
+02/02/2020 19:44:14:910 Welcome to InterProScan-5.40-77.0
+02/02/2020 19:44:14:911 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 19:44:28:912 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1437-final-gbk-AA.fa
+02/02/2020 19:44:28:914 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 19:45:00:489 25% completed
+02/02/2020 19:47:15:029 50% completed
+02/02/2020 19:51:54:061 75% completed
+02/02/2020 19:57:08:153 90% completed
+02/02/2020 20:01:46:756 100% done:  InterProScan analyses completed 
+
+02/02/2020 20:01:48:025 Welcome to InterProScan-5.40-77.0
+02/02/2020 20:01:48:026 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 20:02:02:181 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1438-final-gbk-AA.fa
+02/02/2020 20:02:02:184 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 20:02:21:891 25% completed
+02/02/2020 20:04:09:068 51% completed
+02/02/2020 20:08:08:942 75% completed
+02/02/2020 20:14:57:211 91% completed
+02/02/2020 20:18:17:482 100% done:  InterProScan analyses completed 
+
+02/02/2020 20:18:18:754 Welcome to InterProScan-5.40-77.0
+02/02/2020 20:18:18:755 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 20:18:32:646 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1441-final-gbk-AA.fa
+02/02/2020 20:18:32:649 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 20:18:37:557 28% completed
+02/02/2020 20:18:40:944 85% completed
+02/02/2020 20:18:41:101 Match lookup info: 0% of the 4539 unique input sequences were found in the match lookup server. 
+02/02/2020 20:42:12:237 90% completed
+02/02/2020 20:56:45:424 100% done:  InterProScan analyses completed 
+
+02/02/2020 20:56:46:710 Welcome to InterProScan-5.40-77.0
+02/02/2020 20:56:46:711 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 20:57:00:969 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1446-final-gbk-AA.fa
+02/02/2020 20:57:00:972 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 20:57:04:088 33% completed
+02/02/2020 20:57:08:058 66% completed
+02/02/2020 20:57:08:373 83% completed
+02/02/2020 20:57:08:490 Match lookup info: 0% of the 3268 unique input sequences were found in the match lookup server. 
+02/02/2020 21:16:37:240 90% completed
+02/02/2020 21:17:28:009 100% done:  InterProScan analyses completed 
+
+02/02/2020 21:17:29:289 Welcome to InterProScan-5.40-77.0
+02/02/2020 21:17:29:290 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 21:17:43:539 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1447-final-gbk-AA.fa
+02/02/2020 21:17:43:541 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 21:17:49:055 33% completed
+02/02/2020 21:17:51:134 66% completed
+02/02/2020 21:17:51:451 83% completed
+02/02/2020 21:17:51:574 Match lookup info: 0% of the 3333 unique input sequences were found in the match lookup server. 
+02/02/2020 21:38:03:433 90% completed
+02/02/2020 21:38:35:499 100% done:  InterProScan analyses completed 
+
+02/02/2020 21:38:36:772 Welcome to InterProScan-5.40-77.0
+02/02/2020 21:38:36:774 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 21:38:51:137 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1454-final-gbk-AA.fa
+02/02/2020 21:38:51:139 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 21:38:53:218 28% completed
+02/02/2020 21:38:58:133 71% completed
+02/02/2020 21:38:58:871 85% completed
+02/02/2020 21:38:59:036 Match lookup info: 0% of the 4009 unique input sequences were found in the match lookup server. 
+02/02/2020 22:09:10:936 90% completed
+02/02/2020 22:20:38:299 100% done:  InterProScan analyses completed 
+
+02/02/2020 22:20:39:587 Welcome to InterProScan-5.40-77.0
+02/02/2020 22:20:39:588 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 22:20:53:995 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1463-final-gbk-AA.fa
+02/02/2020 22:20:53:997 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 22:21:00:518 33% completed
+02/02/2020 22:21:06:994 66% completed
+02/02/2020 22:21:07:101 83% completed
+02/02/2020 22:21:07:325 Match lookup info: 0% of the 6894 unique input sequences were found in the match lookup server. 
+02/02/2020 22:50:39:286 90% completed
+02/02/2020 22:59:29:341 100% done:  InterProScan analyses completed 
+
+02/02/2020 22:59:30:644 Welcome to InterProScan-5.40-77.0
+02/02/2020 22:59:30:645 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 22:59:44:781 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1464-final-gbk-AA.fa
+02/02/2020 22:59:44:782 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 23:00:04:787 25% completed
+02/02/2020 23:01:32:963 51% completed
+02/02/2020 23:05:00:713 76% completed
+02/02/2020 23:11:14:622 91% completed
+02/02/2020 23:13:04:347 100% done:  InterProScan analyses completed 
+
+02/02/2020 23:13:05:600 Welcome to InterProScan-5.40-77.0
+02/02/2020 23:13:05:601 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 23:13:20:329 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1465-final-gbk-AA.fa
+02/02/2020 23:13:20:331 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 23:13:51:799 26% completed
+02/02/2020 23:16:49:140 50% completed
+02/02/2020 23:26:06:334 75% completed
+02/02/2020 23:26:27:646 90% completed
+02/02/2020 23:31:03:378 100% done:  InterProScan analyses completed 
+
+02/02/2020 23:31:04:648 Welcome to InterProScan-5.40-77.0
+02/02/2020 23:31:04:649 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 23:31:19:288 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1469-final-gbk-AA.fa
+02/02/2020 23:31:19:289 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 23:31:26:244 Match lookup info: 0% of the 2639 unique input sequences were found in the match lookup server. 
+02/02/2020 23:33:18:693 25% completed
+02/02/2020 23:43:15:570 50% completed
+02/02/2020 23:44:03:827 75% completed
+02/02/2020 23:47:31:427 90% completed
+02/02/2020 23:47:53:277 100% done:  InterProScan analyses completed 
+
+02/02/2020 23:47:54:573 Welcome to InterProScan-5.40-77.0
+02/02/2020 23:47:54:574 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 23:48:09:196 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1478-final-gbk-AA.fa
+02/02/2020 23:48:09:198 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 23:48:17:756 55% completed
+02/02/2020 23:48:17:868 88% completed
+02/02/2020 23:48:18:070 Match lookup info: 0% of the 6002 unique input sequences were found in the match lookup server. 
+03/02/2020 00:12:37:866 90% completed
+03/02/2020 00:20:44:607 100% done:  InterProScan analyses completed 
+
+03/02/2020 00:20:45:896 Welcome to InterProScan-5.40-77.0
+03/02/2020 00:20:45:897 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 00:20:59:890 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_147-final-gbk-AA.fa
+03/02/2020 00:20:59:891 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 00:21:39:501 25% completed
+03/02/2020 00:24:27:653 50% completed
+03/02/2020 00:33:49:707 75% completed
+03/02/2020 00:38:09:768 90% completed
+03/02/2020 00:38:25:196 100% done:  InterProScan analyses completed 
+
+03/02/2020 00:38:26:484 Welcome to InterProScan-5.40-77.0
+03/02/2020 00:38:26:485 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 00:38:41:454 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1499-final-gbk-AA.fa
+03/02/2020 00:38:41:456 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 00:38:43:861 33% completed
+03/02/2020 00:38:48:665 83% completed
+03/02/2020 00:38:48:786 Match lookup info: 0% of the 3103 unique input sequences were found in the match lookup server. 
+03/02/2020 00:59:14:330 90% completed
+03/02/2020 00:59:55:214 100% done:  InterProScan analyses completed 
+
+03/02/2020 00:59:56:480 Welcome to InterProScan-5.40-77.0
+03/02/2020 00:59:56:482 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 01:00:11:280 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_14-final-gbk-AA.fa
+03/02/2020 01:00:11:282 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 01:00:13:357 28% completed
+03/02/2020 01:00:18:257 71% completed
+03/02/2020 01:00:18:984 85% completed
+03/02/2020 01:00:19:161 Match lookup info: 0% of the 4093 unique input sequences were found in the match lookup server. 
+03/02/2020 01:23:28:066 90% completed
+03/02/2020 01:30:19:956 100% done:  InterProScan analyses completed 
+
+03/02/2020 01:30:21:228 Welcome to InterProScan-5.40-77.0
+03/02/2020 01:30:21:229 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 01:30:35:554 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1502-final-gbk-AA.fa
+03/02/2020 01:30:35:556 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 01:31:06:413 25% completed
+03/02/2020 01:34:22:023 50% completed
+03/02/2020 01:43:16:492 75% completed
+03/02/2020 01:43:56:117 90% completed
+03/02/2020 01:48:30:940 100% done:  InterProScan analyses completed 
+
+03/02/2020 01:48:32:208 Welcome to InterProScan-5.40-77.0
+03/02/2020 01:48:32:209 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 01:48:47:084 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1503-final-gbk-AA.fa
+03/02/2020 01:48:47:086 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 01:49:09:676 25% completed
+03/02/2020 01:50:34:952 51% completed
+03/02/2020 01:58:53:938 75% completed
+03/02/2020 02:00:20:906 91% completed
+03/02/2020 02:02:54:626 100% done:  InterProScan analyses completed 
+
+03/02/2020 02:02:55:884 Welcome to InterProScan-5.40-77.0
+03/02/2020 02:02:55:886 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 02:03:10:205 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1504-final-gbk-AA.fa
+03/02/2020 02:03:10:207 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 02:03:56:033 25% completed
+03/02/2020 02:07:39:883 50% completed
+03/02/2020 02:17:28:297 75% completed
+03/02/2020 02:23:01:980 90% completed
+03/02/2020 02:24:27:617 100% done:  InterProScan analyses completed 
+
+03/02/2020 02:24:28:889 Welcome to InterProScan-5.40-77.0
+03/02/2020 02:24:28:891 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 02:24:42:958 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1506-final-gbk-AA.fa
+03/02/2020 02:24:42:960 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 02:25:15:610 25% completed
+03/02/2020 02:28:14:652 50% completed
+03/02/2020 02:36:23:728 75% completed
+03/02/2020 02:38:24:149 90% completed
+03/02/2020 02:44:18:231 100% done:  InterProScan analyses completed 
+
+03/02/2020 02:44:19:504 Welcome to InterProScan-5.40-77.0
+03/02/2020 02:44:19:505 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 02:44:34:357 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1507-final-gbk-AA.fa
+03/02/2020 02:44:34:360 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 02:45:45:175 33% completed
+03/02/2020 02:46:21:766 83% completed
+03/02/2020 03:03:21:895 91% completed
+03/02/2020 03:03:47:165 100% done:  InterProScan analyses completed 
+
+03/02/2020 03:03:48:417 Welcome to InterProScan-5.40-77.0
+03/02/2020 03:03:48:418 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 03:04:03:495 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1508-final-gbk-AA.fa
+03/02/2020 03:04:03:497 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 03:04:38:085 25% completed
+03/02/2020 03:06:56:159 50% completed
+03/02/2020 03:15:59:854 75% completed
+03/02/2020 03:16:32:110 90% completed
+03/02/2020 03:19:59:534 100% done:  InterProScan analyses completed 
+
+03/02/2020 03:20:00:795 Welcome to InterProScan-5.40-77.0
+03/02/2020 03:20:00:796 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 03:20:15:136 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1509-final-gbk-AA.fa
+03/02/2020 03:20:15:138 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 03:20:47:758 25% completed
+03/02/2020 03:23:23:646 50% completed
+03/02/2020 03:28:03:354 75% completed
+03/02/2020 03:38:55:042 90% completed
+03/02/2020 03:39:10:484 100% done:  InterProScan analyses completed 
+
+03/02/2020 03:39:11:748 Welcome to InterProScan-5.40-77.0
+03/02/2020 03:39:11:749 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 03:39:25:886 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_1510-final-gbk-AA.fa
+03/02/2020 03:39:25:888 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 03:39:34:884 87% completed
+03/02/2020 03:39:35:068 Match lookup info: 0% of the 5707 unique input sequences were found in the match lookup server. 
+03/02/2020 04:04:02:789 90% completed
+03/02/2020 04:10:38:416 100% done:  InterProScan analyses completed 
+

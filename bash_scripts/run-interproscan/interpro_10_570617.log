@@ -1,0 +1,514 @@
+02/02/2020 14:01:16:847 Welcome to InterProScan-5.40-77.0
+02/02/2020 14:01:16:848 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 14:01:31:024 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_49-final-gbk-AA.fa
+02/02/2020 14:01:31:027 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 14:02:06:479 26% completed
+02/02/2020 14:04:57:965 51% completed
+02/02/2020 14:13:53:547 75% completed
+02/02/2020 14:15:45:463 92% completed
+02/02/2020 14:22:03:695 100% done:  InterProScan analyses completed 
+
+02/02/2020 14:22:04:976 Welcome to InterProScan-5.40-77.0
+02/02/2020 14:22:04:977 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 14:22:19:786 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_501-final-gbk-AA.fa
+02/02/2020 14:22:19:789 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 14:22:21:755 33% completed
+02/02/2020 14:22:28:967 66% completed
+02/02/2020 14:22:29:707 83% completed
+02/02/2020 14:22:29:848 Match lookup info: 0% of the 3066 unique input sequences were found in the match lookup server. 
+02/02/2020 14:39:43:385 90% completed
+02/02/2020 14:50:26:384 100% done:  InterProScan analyses completed 
+
+02/02/2020 14:50:27:652 Welcome to InterProScan-5.40-77.0
+02/02/2020 14:50:27:653 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 14:50:42:244 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_503-final-gbk-AA.fa
+02/02/2020 14:50:42:246 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 14:50:47:756 28% completed
+02/02/2020 14:50:50:257 71% completed
+02/02/2020 14:50:50:476 85% completed
+02/02/2020 14:50:50:656 Match lookup info: 0% of the 4534 unique input sequences were found in the match lookup server. 
+02/02/2020 15:13:11:280 90% completed
+02/02/2020 15:16:48:080 100% done:  InterProScan analyses completed 
+
+02/02/2020 15:16:49:361 Welcome to InterProScan-5.40-77.0
+02/02/2020 15:16:49:362 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 15:17:03:539 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_504-final-gbk-AA.fa
+02/02/2020 15:17:03:541 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 15:17:11:451 Match lookup info: 0% of the 2747 unique input sequences were found in the match lookup server. 
+02/02/2020 15:19:17:759 25% completed
+02/02/2020 15:29:56:166 50% completed
+02/02/2020 15:30:50:775 75% completed
+02/02/2020 15:35:03:928 90% completed
+02/02/2020 15:35:25:979 100% done:  InterProScan analyses completed 
+
+02/02/2020 15:35:27:269 Welcome to InterProScan-5.40-77.0
+02/02/2020 15:35:27:270 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 15:35:41:748 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_507-final-gbk-AA.fa
+02/02/2020 15:35:41:750 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 15:36:02:704 25% completed
+02/02/2020 15:37:44:593 51% completed
+02/02/2020 15:42:00:059 75% completed
+02/02/2020 15:48:07:891 90% completed
+02/02/2020 15:52:05:342 100% done:  InterProScan analyses completed 
+
+02/02/2020 15:52:06:632 Welcome to InterProScan-5.40-77.0
+02/02/2020 15:52:06:633 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 15:52:20:843 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_512-final-gbk-AA.fa
+02/02/2020 15:52:20:846 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 15:52:52:774 25% completed
+02/02/2020 15:55:33:622 50% completed
+02/02/2020 16:04:41:979 75% completed
+02/02/2020 16:09:04:257 91% completed
+02/02/2020 16:09:26:213 100% done:  InterProScan analyses completed 
+
+02/02/2020 16:09:27:485 Welcome to InterProScan-5.40-77.0
+02/02/2020 16:09:27:487 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 16:09:40:429 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_516-final-gbk-AA.fa
+02/02/2020 16:09:40:431 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 16:10:15:554 26% completed
+02/02/2020 16:12:19:191 50% completed
+02/02/2020 16:16:56:166 75% completed
+02/02/2020 16:25:28:651 90% completed
+02/02/2020 16:25:44:684 100% done:  InterProScan analyses completed 
+
+02/02/2020 16:25:45:952 Welcome to InterProScan-5.40-77.0
+02/02/2020 16:25:45:954 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 16:25:59:930 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_51-final-gbk-AA.fa
+02/02/2020 16:25:59:931 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 16:26:07:302 Match lookup info: 0% of the 2059 unique input sequences were found in the match lookup server. 
+02/02/2020 16:26:38:051 25% completed
+02/02/2020 16:30:29:302 50% completed
+02/02/2020 16:38:48:918 75% completed
+02/02/2020 16:42:59:516 90% completed
+02/02/2020 16:43:13:145 100% done:  InterProScan analyses completed 
+
+02/02/2020 16:43:14:421 Welcome to InterProScan-5.40-77.0
+02/02/2020 16:43:14:423 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 16:43:28:971 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_522-final-gbk-AA.fa
+02/02/2020 16:43:28:974 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 16:44:06:609 25% completed
+02/02/2020 16:47:00:129 50% completed
+02/02/2020 16:56:31:405 76% completed
+02/02/2020 16:58:14:734 90% completed
+02/02/2020 17:03:19:058 100% done:  InterProScan analyses completed 
+
+02/02/2020 17:03:20:307 Welcome to InterProScan-5.40-77.0
+02/02/2020 17:03:20:308 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 17:03:34:578 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_524-final-gbk-AA.fa
+02/02/2020 17:03:34:579 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 17:04:05:755 26% completed
+02/02/2020 17:06:47:962 50% completed
+02/02/2020 17:16:47:068 75% completed
+02/02/2020 17:22:27:389 90% completed
+02/02/2020 17:22:46:402 100% done:  InterProScan analyses completed 
+
+02/02/2020 17:22:47:684 Welcome to InterProScan-5.40-77.0
+02/02/2020 17:22:47:685 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 17:23:01:272 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_529-final-gbk-AA.fa
+02/02/2020 17:23:01:274 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 17:23:03:864 33% completed
+02/02/2020 17:23:08:655 83% completed
+02/02/2020 17:23:08:772 Match lookup info: 0% of the 3170 unique input sequences were found in the match lookup server. 
+02/02/2020 17:47:57:613 90% completed
+02/02/2020 17:48:24:802 100% done:  InterProScan analyses completed 
+
+02/02/2020 17:48:26:115 Welcome to InterProScan-5.40-77.0
+02/02/2020 17:48:26:116 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 17:48:39:614 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_530-final-gbk-AA.fa
+02/02/2020 17:48:39:616 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 17:48:46:800 Match lookup info: 0% of the 2685 unique input sequences were found in the match lookup server. 
+02/02/2020 17:51:04:490 25% completed
+02/02/2020 17:54:50:885 50% completed
+02/02/2020 18:03:51:264 75% completed
+02/02/2020 18:10:39:322 90% completed
+02/02/2020 18:10:54:008 100% done:  InterProScan analyses completed 
+
+02/02/2020 18:10:55:310 Welcome to InterProScan-5.40-77.0
+02/02/2020 18:10:55:311 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 18:11:09:971 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_535-final-gbk-AA.fa
+02/02/2020 18:11:09:975 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 18:11:16:840 Match lookup info: 0% of the 2657 unique input sequences were found in the match lookup server. 
+02/02/2020 18:13:30:573 25% completed
+02/02/2020 18:17:10:667 50% completed
+02/02/2020 18:25:36:085 75% completed
+02/02/2020 18:31:37:712 90% completed
+02/02/2020 18:31:56:574 100% done:  InterProScan analyses completed 
+
+02/02/2020 18:31:57:847 Welcome to InterProScan-5.40-77.0
+02/02/2020 18:31:57:848 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 18:32:11:490 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_538-final-gbk-AA.fa
+02/02/2020 18:32:11:493 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 18:32:32:157 25% completed
+02/02/2020 18:33:22:882 52% completed
+02/02/2020 18:35:42:556 75% completed
+02/02/2020 18:36:32:339 91% completed
+02/02/2020 18:40:01:669 100% done:  InterProScan analyses completed 
+
+02/02/2020 18:40:02:887 Welcome to InterProScan-5.40-77.0
+02/02/2020 18:40:02:888 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 18:40:17:581 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_539-final-gbk-AA.fa
+02/02/2020 18:40:17:584 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 18:40:25:081 33% completed
+02/02/2020 18:40:25:708 83% completed
+02/02/2020 18:40:25:879 Match lookup info: 0% of the 3876 unique input sequences were found in the match lookup server. 
+02/02/2020 19:03:28:338 90% completed
+02/02/2020 19:07:24:409 100% done:  InterProScan analyses completed 
+
+02/02/2020 19:07:25:707 Welcome to InterProScan-5.40-77.0
+02/02/2020 19:07:25:708 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 19:07:40:410 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_541-final-gbk-AA.fa
+02/02/2020 19:07:40:412 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 19:08:19:688 25% completed
+02/02/2020 19:11:32:785 51% completed
+02/02/2020 19:22:05:932 75% completed
+02/02/2020 19:28:26:545 90% completed
+02/02/2020 19:28:46:837 100% done:  InterProScan analyses completed 
+
+02/02/2020 19:28:48:159 Welcome to InterProScan-5.40-77.0
+02/02/2020 19:28:48:160 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 19:29:01:798 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_544-final-gbk-AA.fa
+02/02/2020 19:29:01:800 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 19:29:45:958 25% completed
+02/02/2020 19:34:17:947 50% completed
+02/02/2020 19:40:22:493 75% completed
+02/02/2020 19:43:36:626 90% completed
+02/02/2020 19:49:23:151 100% done:  InterProScan analyses completed 
+
+02/02/2020 19:49:24:463 Welcome to InterProScan-5.40-77.0
+02/02/2020 19:49:24:464 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 19:49:39:195 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_545-final-gbk-AA.fa
+02/02/2020 19:49:39:197 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 19:50:20:612 26% completed
+02/02/2020 19:53:20:031 50% completed
+02/02/2020 19:58:20:411 75% completed
+02/02/2020 20:04:42:049 90% completed
+02/02/2020 20:11:42:734 100% done:  InterProScan analyses completed 
+
+02/02/2020 20:11:43:992 Welcome to InterProScan-5.40-77.0
+02/02/2020 20:11:43:993 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 20:11:57:633 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_547-final-gbk-AA.fa
+02/02/2020 20:11:57:635 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 20:12:05:990 37% completed
+02/02/2020 20:12:06:827 87% completed
+02/02/2020 20:12:07:040 Match lookup info: 0% of the 5239 unique input sequences were found in the match lookup server. 
+02/02/2020 20:34:38:553 90% completed
+02/02/2020 20:47:47:259 100% done:  InterProScan analyses completed 
+
+02/02/2020 20:47:48:520 Welcome to InterProScan-5.40-77.0
+02/02/2020 20:47:48:522 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 20:48:02:677 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_548-final-gbk-AA.fa
+02/02/2020 20:48:02:678 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 20:48:08:378 33% completed
+02/02/2020 20:48:09:427 83% completed
+02/02/2020 20:48:09:592 Match lookup info: 0% of the 3773 unique input sequences were found in the match lookup server. 
+02/02/2020 21:08:57:813 90% completed
+02/02/2020 21:09:36:024 100% done:  InterProScan analyses completed 
+
+02/02/2020 21:09:37:312 Welcome to InterProScan-5.40-77.0
+02/02/2020 21:09:37:313 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 21:09:51:248 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_552-final-gbk-AA.fa
+02/02/2020 21:09:51:250 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 21:10:25:819 25% completed
+02/02/2020 21:13:08:063 51% completed
+02/02/2020 21:18:17:581 75% completed
+02/02/2020 21:22:33:266 90% completed
+02/02/2020 21:27:18:219 100% done:  InterProScan analyses completed 
+
+02/02/2020 21:27:19:475 Welcome to InterProScan-5.40-77.0
+02/02/2020 21:27:19:477 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 21:27:32:585 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_554-final-gbk-AA.fa
+02/02/2020 21:27:32:587 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 21:27:35:594 33% completed
+02/02/2020 21:27:39:559 83% completed
+02/02/2020 21:27:39:675 Match lookup info: 0% of the 3297 unique input sequences were found in the match lookup server. 
+02/02/2020 21:46:09:437 90% completed
+02/02/2020 21:49:57:122 100% done:  InterProScan analyses completed 
+
+02/02/2020 21:49:58:409 Welcome to InterProScan-5.40-77.0
+02/02/2020 21:49:58:410 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 21:50:12:720 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_557-final-gbk-AA.fa
+02/02/2020 21:50:12:723 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 21:50:19:273 Match lookup info: 0% of the 2211 unique input sequences were found in the match lookup server. 
+02/02/2020 21:51:55:644 25% completed
+02/02/2020 21:55:40:607 50% completed
+02/02/2020 22:02:55:601 75% completed
+02/02/2020 22:06:47:493 90% completed
+02/02/2020 22:07:14:656 100% done:  InterProScan analyses completed 
+
+02/02/2020 22:07:15:975 Welcome to InterProScan-5.40-77.0
+02/02/2020 22:07:15:976 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 22:07:30:375 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_560-final-gbk-AA.fa
+02/02/2020 22:07:30:377 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 22:07:37:035 Match lookup info: 0% of the 2962 unique input sequences were found in the match lookup server. 
+02/02/2020 22:10:04:657 25% completed
+02/02/2020 22:21:41:561 50% completed
+02/02/2020 22:23:34:808 75% completed
+02/02/2020 22:29:50:194 91% completed
+02/02/2020 22:30:39:868 100% done:  InterProScan analyses completed 
+
+02/02/2020 22:30:41:199 Welcome to InterProScan-5.40-77.0
+02/02/2020 22:30:41:200 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 22:30:55:312 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_561-final-gbk-AA.fa
+02/02/2020 22:30:55:313 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 22:31:29:405 26% completed
+02/02/2020 22:35:49:508 50% completed
+02/02/2020 22:40:06:164 75% completed
+02/02/2020 22:44:47:818 91% completed
+02/02/2020 22:50:34:723 100% done:  InterProScan analyses completed 
+
+02/02/2020 22:50:35:983 Welcome to InterProScan-5.40-77.0
+02/02/2020 22:50:35:984 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 22:50:49:847 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_563-final-gbk-AA.fa
+02/02/2020 22:50:49:848 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 22:50:52:016 28% completed
+02/02/2020 22:50:57:865 85% completed
+02/02/2020 22:50:58:002 Match lookup info: 0% of the 4066 unique input sequences were found in the match lookup server. 
+02/02/2020 23:14:42:546 90% completed
+02/02/2020 23:18:39:374 100% done:  InterProScan analyses completed 
+
+02/02/2020 23:18:40:650 Welcome to InterProScan-5.40-77.0
+02/02/2020 23:18:40:651 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 23:18:54:201 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_564-final-gbk-AA.fa
+02/02/2020 23:18:54:203 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 23:19:24:783 25% completed
+02/02/2020 23:21:36:913 50% completed
+02/02/2020 23:25:46:498 75% completed
+02/02/2020 23:34:26:544 90% completed
+02/02/2020 23:34:41:919 100% done:  InterProScan analyses completed 
+
+02/02/2020 23:34:43:157 Welcome to InterProScan-5.40-77.0
+02/02/2020 23:34:43:158 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 23:34:56:603 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_567-final-gbk-AA.fa
+02/02/2020 23:34:56:605 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 23:35:03:137 Match lookup info: 0% of the 2044 unique input sequences were found in the match lookup server. 
+02/02/2020 23:36:03:700 25% completed
+02/02/2020 23:39:53:886 50% completed
+02/02/2020 23:49:51:906 75% completed
+02/02/2020 23:54:47:469 90% completed
+02/02/2020 23:55:33:119 100% done:  InterProScan analyses completed 
+
+02/02/2020 23:55:34:383 Welcome to InterProScan-5.40-77.0
+02/02/2020 23:55:34:384 Running InterProScan v5 in STANDALONE mode... on Linux
+02/02/2020 23:55:49:648 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_568-final-gbk-AA.fa
+02/02/2020 23:55:49:650 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+02/02/2020 23:55:52:135 28% completed
+02/02/2020 23:55:56:096 85% completed
+02/02/2020 23:55:56:265 Match lookup info: 0% of the 4152 unique input sequences were found in the match lookup server. 
+03/02/2020 00:23:18:848 90% completed
+03/02/2020 00:31:16:444 100% done:  InterProScan analyses completed 
+
+03/02/2020 00:31:17:732 Welcome to InterProScan-5.40-77.0
+03/02/2020 00:31:17:734 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 00:31:32:149 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_572-final-gbk-AA.fa
+03/02/2020 00:31:32:152 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 00:32:01:847 26% completed
+03/02/2020 00:34:19:963 50% completed
+03/02/2020 00:39:10:321 75% completed
+03/02/2020 00:49:28:498 90% completed
+03/02/2020 00:49:46:022 100% done:  InterProScan analyses completed 
+
+03/02/2020 00:49:47:288 Welcome to InterProScan-5.40-77.0
+03/02/2020 00:49:47:290 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 00:50:01:039 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_573-final-gbk-AA.fa
+03/02/2020 00:50:01:041 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 00:50:33:654 25% completed
+03/02/2020 00:55:04:733 50% completed
+03/02/2020 01:03:49:286 75% completed
+03/02/2020 01:04:56:537 90% completed
+03/02/2020 01:10:34:580 100% done:  InterProScan analyses completed 
+
+03/02/2020 01:10:35:838 Welcome to InterProScan-5.40-77.0
+03/02/2020 01:10:35:840 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 01:10:50:026 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_583-final-gbk-AA.fa
+03/02/2020 01:10:50:028 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 01:11:19:455 25% completed
+03/02/2020 01:14:49:237 50% completed
+03/02/2020 01:24:12:028 75% completed
+03/02/2020 01:26:51:125 90% completed
+03/02/2020 01:29:43:140 100% done:  InterProScan analyses completed 
+
+03/02/2020 01:29:44:412 Welcome to InterProScan-5.40-77.0
+03/02/2020 01:29:44:413 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 01:29:58:102 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_586-final-gbk-AA.fa
+03/02/2020 01:29:58:105 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 01:30:25:726 25% completed
+03/02/2020 01:32:08:159 50% completed
+03/02/2020 01:36:43:049 75% completed
+03/02/2020 01:47:07:513 90% completed
+03/02/2020 01:47:22:104 100% done:  InterProScan analyses completed 
+
+03/02/2020 01:47:23:373 Welcome to InterProScan-5.40-77.0
+03/02/2020 01:47:23:374 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 01:47:37:141 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_589-final-gbk-AA.fa
+03/02/2020 01:47:37:143 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 01:47:41:516 28% completed
+03/02/2020 01:47:46:024 85% completed
+03/02/2020 01:47:46:182 Match lookup info: 0% of the 4327 unique input sequences were found in the match lookup server. 
+03/02/2020 02:14:13:642 90% completed
+03/02/2020 02:14:44:068 100% done:  InterProScan analyses completed 
+
+03/02/2020 02:14:45:361 Welcome to InterProScan-5.40-77.0
+03/02/2020 02:14:45:363 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 02:14:59:922 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_591-final-gbk-AA.fa
+03/02/2020 02:14:59:925 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 02:15:37:216 25% completed
+03/02/2020 02:18:53:226 50% completed
+03/02/2020 02:29:35:023 75% completed
+03/02/2020 02:30:55:044 90% completed
+03/02/2020 02:36:26:435 100% done:  InterProScan analyses completed 
+
+03/02/2020 02:36:27:713 Welcome to InterProScan-5.40-77.0
+03/02/2020 02:36:27:714 Running InterProScan v5 in STANDALONE mode... on Linux
+03/02/2020 02:36:41:889 Loading file /vortexfs1/scratch/dgellermcgrath/scripts/run-interproscan/../../january-final-gbks-as-AA-fa/MAG_595-final-gbk-AA.fa
+03/02/2020 02:36:41:891 Running the following analyses:
+[CDD-3.17,Coils-2.2.1,Gene3D-4.2.0,Hamap-2019_01,MobiDBLite-2.0,Pfam-32.0,PIRSF-3.02,PRINTS-42.0,ProSitePatterns-2019_01,ProSiteProfiles-2019_01,SFLD-4,SMART-7.1,SUPERFAMILY-1.75,TIGRFAM-15.0]
+Available matches will be retrieved from the pre-calculated match lookup service.
+
+Matches for any sequences that are not represented in the lookup service will be calculated locally.
+03/02/2020 02:36:46:503 28% completed
+03/02/2020 02:36:48:487 71% completed
+03/02/2020 02:36:50:302 85% completed
+03/02/2020 02:36:50:455 Match lookup info: 0% of the 4517 unique input sequences were found in the match lookup server. 
+03/02/2020 02:56:08:513 90% completed
+03/02/2020 03:12:03:861 100% done:  InterProScan analyses completed 
+
