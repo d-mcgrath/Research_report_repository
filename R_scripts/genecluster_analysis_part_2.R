@@ -5,7 +5,7 @@ lapply(packs, library, character.only = TRUE)
 library('DESeq2')
 
  # create a key to connect genes to their gene clusters --------------------
-# set wd to location of the genecluster files
+# create a dataframe which links secondary metabolites to their MAG, geneclusters, contigs, contig location, and SM class
 gbk_map <- gbk_geneclusters %>%
   dplyr::rename('geneclust' = 'V1', 'mag' = 'V2', 'sm_class' = 'V3', 'ctg' = 'V4') %>%
   select(-c(V5)) %>%
@@ -14,6 +14,7 @@ gbk_map <- gbk_geneclusters %>%
   select(-c(ex)) %>%
   select(mag, geneclust, sm_class, ctg)
 
+# collapse secondary metabolite class factor into bins within the gbk_map dataframe
 gbk_map$sm_class <- gbk_map$sm_class %>%
   fct_collapse('Polyketide (PK)' = c('t1pks', 't1pks-PUFA', 
                                      't1pks-PUFA-otherks', 't1pks-otherks', 'otherks', 'transatpks', 'transatpks-t1pks',
@@ -40,6 +41,7 @@ gbk_map$sm_class <- gbk_map$sm_class %>%
                           'proteusin-bacteriocin', 'bacteriocin-lantipeptide', 'thiopeptide-bacteriocin',
                           'bacteriocin-thiopeptide', 'bacteriocin-proteusin'))
 
+# order the SM classes within the SM class factor
 gbk_map$sm_class <- factor(gbk_map$sm_class, levels = c('Aryl polyene', 'RiPP', 'Phosphonate', 'Lactone', 'Ladderane',
                                                           'Other secondary metabolite*', 'Unclassified', 'Terpene', 
                                                           'NRP-PK hybrid', 'Non-ribosomal peptide (NRP)', 'Polyketide (PK)'))
@@ -49,7 +51,8 @@ gbk_map$sm_class <- factor(gbk_map$sm_class, levels = c('Aryl polyene', 'RiPP', 
 length(unique(gbk_map$geneclust))
 head(table(sort(fct_infreq(gbk_map$geneclust))), 17)
 
-#set geneclust col to character class to allow for manual editing then edit the duplicates
+#set geneclust col to character class to allow for manual editing then edit the duplicates, add MAG information,
+   # and add phylum column for matching 
 gbk_map$geneclust <- as.character(gbk_map$geneclust)
 gbk_map$geneclust[c(646,647,648)] <- c('MAG_46_1A', 'MAG_46_1B', 'MAG_46_1C')
 gbk_map$geneclust[c(909,910,911)] <- c('MAG_815_2A', 'MAG_815_2B', 'MAG_815_2C')
@@ -86,6 +89,7 @@ gbk_gene <- gbk_gene %>%
   add_column(geneclust = gbk_map$geneclust) %>%
   add_column(phylum = NA)
 
+# add phylum associated with each MAG into the gbk_gene dataframe
 for (i in seq_along(gbk_gene$mag)) {
   for (k in seq_along(mtb2_to_mag_key$bin_id)) {
     if (as.character(gbk_gene$mag)[i] == as.character(mtb2_to_mag_key$bin_id)[k]) {
@@ -95,11 +99,11 @@ for (i in seq_along(gbk_gene$mag)) {
   }
 }
 
-# Create May & Nov data, Likelihood ratio test - for combined data ------------------------
+# Import combined May & Nov data for DESeq2 and Wald Tests ------------------------
 prodFinal_counts <- as.matrix(read.csv('~/Documents/cariaco/R_analysis/final-gbk-read-count-table.tsv', sep = '\t', row.names = 1))
 colnames(prodFinal_counts) <- sub('.counts.txt', '', colnames(prodFinal_counts))
 
-# create the 'coldata' metadata - doing it as a matrix
+# create the 'coldata' metadata - as a matrix - this will be metadata associated with the RNA-seq samples
 coldata <- as.data.frame(colnames(prodFinal_counts))
 names(coldata) <- 'sample'
 
@@ -123,15 +127,13 @@ final_coldata <- final_coldata %>%
   slice(-29) %>%
   column_to_rownames(var = 'rnms')
 
-prodFinal_counts <- prodFinal_counts[, rownames(final_coldata)]
+prodFinal_counts <- prodFinal_counts[, rownames(final_coldata)] # re-order the counts matrix columns to match rowname 
+  # order from the coldata
 all(colnames(prodFinal_counts) == rownames(final_coldata))
 
-#prodFinal_coldata$fraction <- 0
-#prodFinal_coldata$fraction <- ifelse(str_detect(rownames(prodFinal_coldata), 'FL'), prodFinal_coldata$fraction <- 'FL', 'PA')
-#prodFinal_coldata$fraction <- as.factor(prodFinal_coldata$fraction)
 
-
-# define coldata by O2 concentration, not by depth in meters - this allows for comparison across seasons
+# define coldata by O2 concentration, not by depth in meters - this allows for comparison across seasons, and layer-based
+ # comparison (oxycline, shallow anoxic, euxinic layers) vs. depth-wise - gives a big picture look at the data
 oxy_coldata <- prodFinal_coldata
 oxy_coldata$depth <- as.numeric(as.character(oxy_coldata$depth))
 oxy_coldata$layer <- ifelse(oxy_coldata$depth <= 237, oxy_coldata$layer <- 'oxycline',
@@ -142,7 +144,9 @@ oxy_coldata$layer <- ifelse(oxy_coldata$depth <= 237, oxy_coldata$layer <- 'oxyc
 oxy_coldata$depth <- as.factor(oxy_coldata$depth)
 oxy_coldata$layer <- as.factor(oxy_coldata$layer)
 
-#
+# the DESeq2 model will be run with the fraction (FL vs PA) and layer (water layer) factors combined in unique
+ # pairs that will give the same result as if they were left uncombined, but is easier for pulling out DESeq2 Wald Test results
+ # (as suggested by Micheal Love - one of the creators of DESeq2)
 all(colnames(prodFinal_counts) == rownames(oxy_coldata))
 final_coldata <- oxy_coldata[c(3, 4)]
 final_coldata <- final_coldata %>%
@@ -155,44 +159,48 @@ prodFinal_counts <- prodFinal_counts %>%
   data.frame() %>%
   rownames_to_column(var= 'gene')
 
+# subsetted dataframe of all the counts for all predicted genes to include just the counts of biosynthetic gene clusters
 prodFinal_counts <- subset(prodFinal_counts, !(gene %in% final_gene$smBGC))
 rownames(prodFinal_counts) <- c()
 prodFinal_counts <- prodFinal_counts %>%
   column_to_rownames(var = 'gene') %>%
   as.matrix()
   
-#changed from bwa_counts
+#load the DESeq2 object
 prodFinal_dds <- DESeqDataSetFromMatrix(countData = prodFinal_counts, colData = final_coldata,
                                     design = ~ group)
-prod_vst <- vst(prodFinal_dds, blind = FALSE)
+prod_vst <- vst(prodFinal_dds, blind = FALSE) # take vst normalized count data
 prod_vst_mat <- assay(prod_vst)
 prod_vst_cor <- cor(prod_vst_mat)
-pheatmap(prod_vst_cor)
+pheatmap(prod_vst_cor) # visualize correlations of the normalized count data, look at how the samples are different or similar
 
 fin_dds <- estimateSizeFactors(prodFinal_dds)
-normProd_counts <- counts(fin_dds, normalized = TRUE)
+normProd_counts <- counts(fin_dds, normalized = TRUE) # save the normalized count data
 
-gbkFinal_dds <- DESeq(prodFinal_dds)
+gbkFinal_dds <- DESeq(prodFinal_dds) # run the DESeq2 statistical model which assumes a negative binomial distribution for
+    # the RNA-seq count matrix data
 resultsNames(gbkFinal_dds)
+
+# pull Wald test results comparing the oxycline PA to FL fractions 
 gbk_oxyRes <- results(gbkFinal_dds, contrast = c('group',
                                           'PA_oxycline', 'FL_oxycline'), alpha = 0.05)
 summary(gbk_oxyRes)
-#oxyRes_shrunk <- lfcShrink(final_dds, contrast = c('group',
-#                                                   'PA_oxycline', 'FL_oxycline'), 
-#                          res = oxyRes, type = 'apeglm')
 
+# pull Wald test results comparing the euxinic PA to FL fractions 
 gbk_euxRes <- results(gbkFinal_dds, contrast = c('group',
                                           'PA_euxinic', 'FL_euxinic'), alpha = 0.05)
 summary(gbk_euxRes)
 
+# pull Wald test results comparing the shallow anoxic PA to FL fractions 
 gbk_anoxRes <- results(gbkFinal_dds, contrast = c('group', 'PA_shallow_anoxic',
                                            'FL_shallow_anoxic'), alpha = 0.05)
 summary(gbk_anoxRes)
 
-#
+# make a copy of the coldata
 copy_fc <- final_coldata %>%
   rownames_to_column(var = 'sample')
-#
+
+# create another key connecting MAG names to taxonomy
 mtb2_to_mag_key <- taxonomy_draftMags[, c(1, 3)]
 mtb2_to_mag_key$Phylum <- ifelse(mtb2_to_mag_key$Phylum == 'p__', 
                                  sub('p__', 'Unclassified', mtb2_to_mag_key$Phylum), 
@@ -215,7 +223,7 @@ get_normCounts <- function(results, columns, overall_normCounts) {
     rownames_to_column(var = 'gene') %>%
     as_tibble()
   sig <- res_tb %>%
-    filter(padj < 0.05)
+    filter(padj < 0.05 & abs(log2FoldChange) > 2)
   norm_sig <- overall_normCounts[, columns] %>%
     data.frame() %>%
     rownames_to_column(var = 'gene') %>%
@@ -226,7 +234,6 @@ get_normCounts <- function(results, columns, overall_normCounts) {
   return(norm_sig)
 }
 
-# & abs(log2FoldChange) > 1
 # function to pull out geneclusters and their associated taxonomies
 de_bar <- function(layer_particle, title, size = 9) {
   layer_particle <- layer_particle %>%
@@ -298,6 +305,7 @@ de_bar <- function(layer_particle, title, size = 9) {
                      "#A6CEE3", "#FDA440", "#FFCCCB", "#B294C7", "#825D99")
   names(layer_palette) <- levels(layer_particle$sm_type) 
   
+  # plot the geneclusters by taxa, with each SM class color coded within a barplot
   smbgc_plot <- 
     ggplot(arrange(layer_particle, sm_type), aes(taxonomy, fill = sm_type)) +
     geom_bar() +
@@ -340,67 +348,72 @@ get_rowAnno <- function(norm_layerSig) {
 
 # create heatmaps, pull out signifcant genes ------------------------------
 
-#
+# pull out significantly expressed (padj < 0.05 & absolute value of log2FoldChange > 2) for oxycline data
 gbk_oxy_SigGenes <- gbk_oxyRes %>%
   data.frame() %>%
   rownames_to_column(var = 'gene') %>%
   as_tibble() %>%
-  filter(padj < 0.05)
+  filter(padj < 0.05 & abs(log2FoldChange) > 2)
 
-#
+# pull out significantly expressed (padj < 0.05 & absolute value of log2FoldChange > 2) for shallow anoxic data
 gbk_anox_SigGenes <- gbk_anoxRes %>%
   data.frame() %>%
   rownames_to_column(var = 'gene') %>%
   as_tibble() %>%
-  filter(padj < 0.05)
+  filter(padj < 0.05 & abs(log2FoldChange) > 2)
 
-#
+# pull out significantly expressed (padj < 0.05 & absolute value of log2FoldChange > 2) for euxinic data
 gbk_eux_SigGenes <- gbk_euxRes %>%
   data.frame() %>%
   rownames_to_column(var = 'gene') %>%
   as_tibble() %>%
-  filter(padj < 0.05)
+  filter(padj < 0.05 & abs(log2FoldChange) > 2)
 
-#
+# run function to subset counts matrix to pull out count data for significantly expressed genes in each water layer
 gbk_norm_oxySig <- get_normCounts(gbk_oxyRes, c(1:5, 12:17, 24:28, 36:40), normProd_counts)
 gbk_norm_anoxSig <- get_normCounts(gbk_anoxRes, c(6:9, 18:21, 29:32, 41:44), normProd_counts)
 gbk_norm_euxSig <- get_normCounts(gbk_euxRes, c(10, 11, 22, 23, 33, 34, 45, 46), normProd_counts)
 
-#
+# create column annotation dataframes for heatmap creation
 gbk_oxy_colAnno <- get_colAnno(gbk_norm_oxySig)
 gbk_anox_colAnno <- get_colAnno(gbk_norm_anoxSig)
 gbk_eux_colAnno <- get_colAnno(gbk_norm_euxSig)
 
+# create row annotation dataframes for heatmap creation
 gbk_oxy_rowAnno <- get_rowAnno(gbk_norm_oxySig)
 gbk_anox_rowAnno <- get_rowAnno(gbk_norm_anoxSig)
 gbk_eux_rowAnno <- get_rowAnno(gbk_norm_euxSig)
 
-#rename sample names to make them more readable
+# rename sample names to make them more readable
 copy_gbkNormOxySig <- gbk_norm_oxySig
 copy_gbkOxyColAnno <- gbk_oxy_colAnno
 
+# rename columns to make them more readable
 colnames(copy_gbkNormOxySig) <- c("May_FL_103_2", "May_FL_198_1", "May_FL_198_2", "May_FL_234_1", "May_FL_234_2", "May_PA_103_1", 
                                   "May_PA_103_2", "May_PA_198_1", "May_PA_198_2", "May_PA_234_1", "May_PA_234_2",
                                   "Nov_FL_148_1", "Nov_FL_148_2", "Nov_FL_200_1", "Nov_FL_200_2", "Nov_FL_237_1",
                                   "Nov_PA_200_1", "Nov_PA_200_2", "Nov_PA_237_1", "Nov_PA_237_2")
+                              
+# apply the naming scheme to the column annotation
 rownames(copy_gbkOxyColAnno) <- colnames(copy_gbkNormOxySig)
 
+#create a heatmap of the normalized counts of significantly expressed genes in the oxycline samples
 gbk_oxyHeat <- pheatmap(copy_gbkNormOxySig, scale = 'row', show_rownames = F,
          clustering_method = 'ward.D', annotation_col = copy_gbkOxyColAnno,
          annotation_colors = relAbunPalette, treeheight_row = 25, treeheight_col = 0)
 
-#
+# create a dataframe which shows which genes belong to which cluster (4 clusters total)
 gbk_norm_oxySig_test <- rownames(gbk_norm_oxySig[gbk_oxyHeat$tree_row[['order']], ]) %>%
   data.frame() %>%
   add_column(clust = cutree(gbk_oxyHeat$tree_row, 4)[gbk_oxyHeat$tree_row[['order']]])
 gbk_oxy_smBGC <- cutree(gbk_oxyHeat$tree_row, 4)
 
-#
+# dataframes for genes belonging to PA fraction and FL fraction clusters from the heatmap
 gbk_oxyFL <- as.data.frame(which(gbk_oxy_smBGC == 1)); colnames(gbk_oxyFL) <- 'position'
 gbk_oxyPA <- as.data.frame(which(gbk_oxy_smBGC == 2 | gbk_oxy_smBGC == 3 |
                                    gbk_oxy_smBGC == 4)); colnames(gbk_oxyPA) <- 'position'
 
-#
+# create barplots for the genes which represent the SM geneclusters they belong to (for each of their rep phylums)
 gbk_oxyFL <- de_bar(gbk_oxyFL, 'Differentially expressed smBGCs in the oxycline FL fraction')
 gbk_oxyPA <- de_bar(gbk_oxyPA, 'Differentially expressed smBGCs in the oxycline PA fraction')
 
@@ -415,21 +428,23 @@ colnames(copy_gbkNormAnoxSig) <- c("May_FL_295_1", "May_FL_95_2", "May_FL_314_1"
                                    "Nov_PA_267_2")
 rownames(copy_gbkAnoxColAnno) <- colnames(copy_gbkNormAnoxSig)
 
+#create a heatmap of the normalized counts of significantly expressed genes in the shallow anoxic samples
 gbk_anoxHeat <- pheatmap(copy_gbkNormAnoxSig, scale = 'row', show_rownames = FALSE,
          clustering_method = 'ward.D', annotation_col = copy_gbkAnoxColAnno,
          annotation_colors = relAbunPalette, treeheight_row = 25, treeheight_col = 0)
 
+# create a dataframe which shows which genes belong to which cluster (2 clusters total)
 gbk_norm_anoxSig_test <- rownames(gbk_norm_anoxSig[gbk_anoxHeat$tree_row[['order']], ]) %>%
   data.frame() %>%
   add_column(clust = cutree(gbk_anoxHeat$tree_row, 2)[gbk_anoxHeat$tree_row[['order']]])
 
 gbk_anox_smBGC <- cutree(gbk_anoxHeat$tree_row, 2)
 
-#
+# dataframes for genes belonging to PA fraction and FL fraction clusters from the heatmap
 gbk_anoxFL <- as.data.frame(which(gbk_anox_smBGC == 2)); colnames(gbk_anoxFL) <- 'position'
 gbk_anoxPA <- as.data.frame(which(gbk_anox_smBGC == 1)); colnames(gbk_anoxPA) <- 'position'
 
-#
+# create barplots for the genes which represent the SM geneclusters they belong to (for each of their rep phylums)
 gbk_anoxFL <- de_bar(gbk_anoxFL, 'Differentially expressed smBGCs in the shallow anoxic FL fraction')
 gbk_anoxPA <- de_bar(gbk_anoxPA, 'Differentially expressed smBGCs in the shallow anoxic PA fraction')
 
@@ -448,34 +463,35 @@ gbk_euxHeat <- pheatmap(copy_gbkNormEuxSig, scale = 'row',
          annotation_colors = relAbunPalette, show_rownames = FALSE,
          treeheight_row = 25, treeheight_col = 0)
 
+# create a dataframe which shows which genes belong to which cluster (4 clusters total)
 gbk_norm_euxSig_test <- rownames(gbk_norm_euxSig[gbk_euxHeat$tree_row[['order']], ]) %>%
   data.frame() %>%
   add_column(clust = cutree(gbk_euxHeat$tree_row, 4)[gbk_euxHeat$tree_row[['order']]])
 
 gbk_eux_smBGC <- cutree(gbk_euxHeat$tree_row, 4)
 
-#
+# dataframes for genes belonging to PA fraction and FL fraction clusters from the heatmap
 gbk_euxFL <- as.data.frame(which(gbk_eux_smBGC == 4)); colnames(gbk_euxFL) <- 'position'
 gbk_euxPA <- as.data.frame(which(gbk_eux_smBGC == 1 | gbk_eux_smBGC == 2 |
                                    gbk_eux_smBGC == 3)); colnames(gbk_euxPA) <- 'position'
 
-#
+# create barplots for the genes which represent the SM geneclusters they belong to (for each of their rep phylums)
 gbk_euxFL <- de_bar(gbk_euxFL, 'Differentially expressed smBGCs in the euxinic FL fraction')
 gbk_euxPA <- de_bar(gbk_euxPA, 'Differentially expressed smBGCs in the euxinic PA fraction')
 
-#
+# save heatmaps arranged with PA and FL barplots for the oxycline samples
 png(filename = 'oxycline_de_FINAL.png', units = 'in', width = 11, height = 16.3, res = 500)
 grid.arrange(gbk_oxyHeat[[4]], gbk_oxyPA[[2]], gbk_oxyFL[[2]],
              layout_matrix = rbind(c(1,1,1,2,2), c(1,1,1,3,3)))
 dev.off()
 
- #
+# save heatmaps arranged with PA and FL barplots for the shallow anoxic samples
 png(filename = 'anox_de_FINAL.png', units = 'in', width = 12, height = 16.3, res = 500)
 grid.arrange(gbk_anoxHeat[[4]], gbk_anoxFL[[2]], gbk_anoxPA[[2]],
              layout_matrix = rbind(c(1,1,1,2,2), c(1,1,1,3,3)))
 dev.off()
 
-#
+# save heatmaps arranged with PA and FL barplots for the euxinic samples
 png(filename = 'eux_de_FINAL.png', units = 'in', width = 11, height = 16.3, res = 500)
 grid.arrange(gbk_euxHeat[[4]], gbk_euxFL[[2]], gbk_euxPA[[2]],
              layout_matrix = rbind(c(1,1,1,2,2), c(1,1,1,3,3)))
@@ -619,7 +635,7 @@ getVolcano <- function(res_tb, layer, nudgex = -5, nudgey = 3, tag = NULL) {
     ylim(0, 30)
 }
 
-
+# generate input for volcanco plots for each water layer
 oxy_volcInput <- getVolcInput(gbk_oxyRes, copy_gbkNormOxySig)
 oxy_volc <- getVolcano(oxy_volcInput[[1]], 'Oxycline', -5, 6, tag = '7a')
 
@@ -634,16 +650,7 @@ grid.arrange(oxy_volc, anox_volc, eux_volc,
              layout_matrix = rbind(c(1,1,1), c(2,2,2), c(3,3,3)))
 dev.off()
 
-# build a reduced model to see important expression changes of SMs --------
-#model run based on O2 concentration (layers) instead of individual depths
-oxy_coldata$fraction <- relevel(oxy_coldata$fraction, ref = 'FL')
-#levels(oxy_coldata$layer) <- c('oxycline', 'shallow_anoxic', 'euxinic')
-#levels(oxy_coldata$fraction)
-#levels(oxy_coldata$layer)
-
-
-
-# create supplementary table 1 with sample naming scheme informa --------
+# create supplementary table 1 with sample naming scheme information --------
 suppTab1 <- data.table('Sample Name' = rownames(coldata), 'Time point' = c(rep('May', 24), rep('November', 24)),
                        'Year' = 2014, 'Sampling depth' = paste(coldata$depth, 'm', sep = ''),
                        'Sample fraction' = c(rep('Free-living', 12), rep('Particle-associated', 12),
@@ -743,11 +750,11 @@ geneAnno <- geneAnno %>%
   filter(mag %in% mags_with_smBGCs$mag) %>%
   rename('gene' = 'protein_acc')
 
-#
+# a subset of the all unique gene annotation discriptors
 sig_descrip_uniq <- tibble(unique(geneAnno$sig_descrip)) %>%
   rename('gene_description' = 1)
 
-#
+# a subset of the all unique interpro gene annotation discriptors
 intropro_descrip_uniq <- tibble(unique(geneAnno$interpro_descrip)) %>%
   rename('gene_description' = 1)
 
@@ -1005,7 +1012,6 @@ mag_bp <- mag_bp %>%
 mag_bp$mag <- sub('CarAnox_mtb2', 'MAG', mag_bp$mag)
 
 
-
 # characterize clusters based on their known cluster hits within MiBIG DB --------
 knownClust <- as.data.frame(read.csv('~/Documents/cariaco/knownclusterblast-results-allcontigs.txt', sep = '\n', 
                                      header = FALSE, stringsAsFactors = FALSE))
@@ -1080,22 +1086,7 @@ clusts_withHits <- clusts_withHits %>%
 unk <- unique(clusts_withHits$mag[clusts_withHits$sm_class == 'Unclassified'])
 write.table(unk, file = '~/Documents/cariaco/magNames-with-unk-smBGC-class', quote = FALSE,
             row.names = FALSE, col.names = FALSE)
-  
-
-
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
+                            
 
 # parse hmm antibiotic resistance hits ------------------------------------
 hmmRes <- read.csv('~/Documents/cariaco/R_analysis/csv-hmm-final-results.txt', header = FALSE, fill = TRUE)
@@ -1146,20 +1137,12 @@ hmmHits_onGCs_PKS_NRPS %>% ggplot(aes(sm_class, fill = phylum)) +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 50, hjust = 1))
 
-#checking what kinds of smBGCs are within MAGs with rhodopsin genes
+#checking what kinds of smBGCs are within MAGs with rhodopsin genes - NOTE: this analysis was not included in the report - 
+                                    # it was exploratory
 rhodop <- geneAnno %>%
   filter(str_detect(sig_descrip, 'rhodopsin') | str_detect(interpro_descrip, 'rhodopsin'))
 View(rhodop)
 
 rhodop_mags <- gbk_gene %>%
   filter(mag %in% unique(rhodop$mag))
-
-
-
-
-
-
-
-
-
 
