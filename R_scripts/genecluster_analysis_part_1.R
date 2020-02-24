@@ -29,6 +29,7 @@ gbk_gene <- gbk_gene %>%
   unite('mag', c('magdraft', 'magnum'), sep = '_') %>%
   select(-c(ex))
 
+# bin secondary metabolite names into categories using factor collapse commands
 gbk_gene$sm_class <- gbk_gene$sm_class %>%
   fct_collapse('Polyketide (PK)' = c('t1pks', 't1pks-PUFA', 
                                      't1pks-PUFA-otherks', 't1pks-otherks', 'otherks', 'transatpks', 'transatpks-t1pks',
@@ -55,10 +56,13 @@ gbk_gene$sm_class <- gbk_gene$sm_class %>%
                           'proteusin-bacteriocin', 'bacteriocin-lantipeptide', 'thiopeptide-bacteriocin',
                           'bacteriocin-thiopeptide', 'bacteriocin-proteusin'))
 
+# order the classes of secondary metabolites within the sm_class factor
 gbk_gene$sm_class <- factor(gbk_gene$sm_class, levels = c('Aryl polyene', 'RiPP', 'Phosphonate', 'Lactone', 'Ladderane',
                                                                       'Other secondary metabolite*', 'Unclassified', 'Terpene', 
                                                                       'NRP-PK hybrid', 'Non-ribosomal peptide (NRP)', 'Polyketide (PK)'))
 
+# create a reference dataframe which defines each secondary metabolite class, the MAG it belongs to, the contig it is on,
+           # and the secondary metabolite cluster it belongs to
 gbk_gene <- gbk_gene %>%
   mutate(ctg = strsplit(as.character(ctg), ';')) %>%
   unnest(ctg)
@@ -76,7 +80,7 @@ gbk_gene <- gbk_gene %>%
   unite(taxmag, c('phy', 'magnum'), sep = '_') %>%
   select(-c(mg))
 
-# a function to visualize categorical columns
+# a function to visualize categorical columns from dataframes
 plot_bars <- function(df, title = NULL, y_label = NULL, tag = NULL) {
   cols <- colnames(df)
   for (col in cols) {
@@ -98,11 +102,12 @@ plot_bars <- function(df, title = NULL, y_label = NULL, tag = NULL) {
 draft_mags <- read.csv("~/Documents/cariaco/tables_magInfo/mags_75compl_5cont.csv")
 taxonomy_draftMags <- draft_mags[, c(1,7)] # keep only relevant columns from the table
 
-# separate the concatenated taxonomic column into indiviudal columns by tax. rank
+# separate the concatenated taxonomic column into indiviudal columns by tax. rank in a dataframe
 taxonomy_draftMags <- taxonomy_draftMags %>%
   separate(classification, into = c('Domain', 'Phylum', 'Class', 'Order', 'Family',
                                     'Genus', 'Species'), sep = ';')
 
+# make a new dataframe with just the phylum associated with each mag from the taxonomy_draftMags dataframe
 draft_phyla <- as.data.frame(taxonomy_draftMags$Phylum); names(draft_phyla) <- "Phylum"
 
 # edit the phyla to remove unneccesary text, or classify unknown phyla as 'Unclassified'
@@ -110,10 +115,13 @@ draft_phyla$Phylum <- ifelse(draft_phyla$Phylum == 'p__', sub('p__', 'Unclassifi
                              sub('p__', "", draft_phyla$Phylum)) 
 draft_phyla$Phylum <- as.factor(draft_phyla$Phylum) # set the Phylum to class factor for plotting
 
+# create another dataframe which is a key that links MAG names to their phyla, rename the phyla to remove 'p__'
 mp_key <- taxonomy_draftMags[c(1, 3)]
 mp_key$Phylum <- ifelse(mp_key$Phylum == 'p__', sub('p__', 'Unclassified', mp_key$Phylum),
                         sub('p__', '', mp_key$Phylum))
 
+# rename taxonomy_draftMags class to remove the 'c__' in front of all class names, also define MAGS unannotated at the class
+     #level as "Unclassified"
 taxonomy_draftMags$Class <- ifelse(taxonomy_draftMags$Class == 'c__', sub('c__', 'Unclassified', taxonomy_draftMags$Class),
                                    sub('c__', '', taxonomy_draftMags$Class))
 taxonomy_draftMags$bin_id <- sub('-', '_', taxonomy_draftMags$bin_id)
@@ -123,33 +131,38 @@ taxonomy_draftMags$Phylum <- ifelse(taxonomy_draftMags$Phylum == 'p__', sub('p__
 # set working directory to save plots
 setwd('~/Documents/cariaco/figures/')
 
-# archaeal phyla
+# archaeal phyla dataframe subset from the draft_phyla dataframe
 arch_phyla <- subset(draft_phyla, Phylum %in% c('Nanoarchaeota', 'Thermoplasmatota', 
                                    'Iainarchaeota', 'Altiarchaeota', 'UAP2', 'Aenigmarchaeota',
                                    'Crenarchaeota', 'Halobacterota'))
-rownames(arch_phyla) <- c()
+rownames(arch_phyla) <- c() # reset the rownames after subsetting
+
+# order the phylum factor defining all archaeal phyla in order of most to least frequent
 arch_phyla <- within(arch_phyla, Phylum <- 
                         factor(Phylum, levels = names(sort(table(Phylum), decreasing = TRUE))))
 
-# bacterial phyla ############################
+# bacterial phyla dataframe subset from the draft_phyla dataframe
 bact_phyla <- subset(draft_phyla, !(Phylum %in% c('Nanoarchaeota', 'Thermoplasmatota', 
                                                  'Iainarchaeota', 'Altiarchaeota', 'UAP2', 'Aenigmarchaeota',
                                                  'Crenarchaeota', 'Halobacterota')))
-rownames(bact_phyla) <- c()
+
+rownames(bact_phyla) <- c() # reset the rownames after subsetting
+
+# order the phylum factor defining all bacterial phyla in order of most to least frequent
 bact_phyla <- within(bact_phyla, Phylum <- 
                        factor(Phylum, levels = names(sort(table(Phylum), decreasing = TRUE))))
 
-# final bacterial phyla (cut phyla with only 1 representative MAG)
+# final bacterial phyla (phyla with only 1 representative MAG were cut from the dataframe)
 final_bp <- subset(bact_phyla, !(Phylum %in% c('Aerophobota', 'Chloroflexota_B', 'Cyanobacteria',
                                                'Dadabacteria', 'Delongbacteria', 'Dependentiae',
                                                'FEN-1099', 'Fermentibacterota', 'Fibrobacterota',
                                                'Gemmatimonadota_A', 'KSB1', 'OLB16', 'Poribacteria',
                                                'Ratteibacteria', 'UBP17', 'UBP3', 'Verrucomicrobiota_A')))
 
-# plot bacterial MAGs
+# plot bacterial MAG frequency - barplot
 bp <- plot_bars(final_bp, y_label = 'Number of MAGs per phylum', tag = '1a')
 
-# plot archaeal MAGs
+# plot archaeal MAG frequency - barplot
 ap <- plot_bars(arch_phyla, y_label = 'Number of MAGs per phylum', tag = '1b')
 
 # group the plots together with grid.arrange, set quality and size and save plot grid
@@ -157,14 +170,16 @@ png(filename = 'arch_bact_mags_distr.png', units = 'in', width = 8, height = 8, 
 grid.arrange(bp, ap, layout_matrix = rbind(c(1,1,1,1,1), c(2,2,NA,NA,NA)))
 dev.off()
 
-# convert to columns to class character for matching
+# convert to taxonomy_draftMags columns to class character for matching
 taxonomy_draftMags$Phylum <- as.character(taxonomy_draftMags$Phylum)
 taxonomy_draftMags$bin_id <- as.character(taxonomy_draftMags$bin_id)
 
+# subset the geneclusters into a dataframe that includes only geneclusters from draft ("high quality") MAGs
 draftContigs_geneclusters <- 
   allContigs_geneclusters[allContigs_geneclusters$Genome %in% taxonomy_draftMags$bin_id, ]
-rownames(draftContigs_geneclusters) <- c()
+rownames(draftContigs_geneclusters) <- c() # reset the rownames after subsetting
 
+# convert Genome column to character, add in Phylum column to fill in the following matching nested for loop
 draftContigs_geneclusters$Genome <- as.character(draftContigs_geneclusters$Genome)
 draftContigs_geneclusters <- add_column(draftContigs_geneclusters, Phylum = NA, 
                                       .after = 'Genome')
@@ -190,9 +205,6 @@ draftContigs_geneclusters$Phylum <- ifelse(draftContigs_geneclusters$Phylum == '
 # set the Phylum to class factor for plotting
 draftContigs_geneclusters$Phylum <- as.factor(draftContigs_geneclusters$Phylum) 
 
-
-# plot
-
 #creating custom palette to fit the amount of Phyla represented in the plot
 colorCount <- length(unique(draftContigs_geneclusters$Phylum))
 getPalette <- colorRampPalette(brewer.pal(n = 8, name = 'Dark2'))(colorCount)
@@ -210,12 +222,12 @@ draftContigs_geneclusters <- within(draftContigs_geneclusters, Secondary_metabol
                        names(sort(table(Secondary_metabolite_class), 
                                   decreasing = TRUE))))
 
-##### ALL CONTIGS - COLLAPSING CATEGORIES OF SECONDARY METABOLITES ########## 
+### COLLAPSING CATEGORIES OF SECONDARY METABOLITES ###
 
 # collapse categories of secondary metabolites
 draftContigs_sm_collapsed <- draftContigs_geneclusters
 
-# the collapse step
+# the collapse step - collapse contigs from high quality MAGs into secondary metabolite bins
 draftContigs_sm_collapsed$Secondary_metabolite_class <- draftContigs_sm_collapsed$Secondary_metabolite_class %>% 
   fct_collapse('Polyketide (PK)' = c('t1pks', 't1pks-PUFA', 
     't1pks-PUFA-otherks', 't1pks-otherks', 'otherks', 'transatpks', 'transatpks-t1pks',
@@ -262,40 +274,30 @@ draftContigs_sm_collapsed$Secondary_metabolite_class <- draftContigs_sm_collapse
 # drop unused factor levels
 draftContigs_sm_collapsed$Secondary_metabolite_class <- factor(draftContigs_sm_collapsed$Secondary_metabolite_class)
 
-#pie chart of all secondary metabolite classes
+# pie chart dataframe creation for secondary metabolite classes
+
+# dataframe of secondary metabolite classes and their total frequencies (Freq)
 draft_pie <- as.data.frame(table(draftContigs_sm_collapsed$Secondary_metabolite_class))
+
+# calculating the percent that each SM class comprises out of the total about of SM biosynthetic geneclusters (smBGCs)
 draft_pie$percent <- draft_pie$Freq / sum(draft_pie$Freq) * 100
-draft_pie$percent <- round(draft_pie$percent, digits = 1)
-names(draft_pie)[1] <- 'Secondary_metabolite_class'
-draft_pie <- draft_pie[order(draft_pie$percent, decreasing = TRUE), ]
-rownames(draft_pie) <- c()
+draft_pie$percent <- round(draft_pie$percent, digits = 1) # round the percentage decimals to one digit
+names(draft_pie)[1] <- 'Secondary_metabolite_class' # rename SM class column for plotting
+draft_pie <- draft_pie[order(draft_pie$percent, decreasing = TRUE), ] # order SM classes from highest to lowest percentages
+rownames(draft_pie) <- c() # reset rownames
+
+# order SM class factor by largest to smallest in terms of percent of the total amount of smBGCs
 draft_pie$Secondary_metabolite_class <-
   factor(draft_pie$Secondary_metabolite_class, levels =
            draft_pie$Secondary_metabolite_class[order(draft_pie$percent, decreasing = TRUE)])
 
+# create a color palette for pie chart
 pie_colorCount <- length(unique(draft_pie$Secondary_metabolite_class))
 pie_Palette <- colorRampPalette(brewer.pal(n = 12, name = 'Dark2'))(pie_colorCount)
 
-#png(filename = 'all_smbgc.png', units = 'in', width = 7, height = 5, res = 1000)
-#draft_pie %>% ggplot(aes(x = "", y = percent,
-#                         fill = Secondary_metabolite_class)) +
-#  geom_bar(width = 1, stat = 'identity') +
-#  coord_polar(theta = 'y') +
-#  theme(axis.text.x = element_blank(),
-#        legend.text = element_text(size = 8),
-#        legend.title = element_text(size = 10),
-#        legend.background = element_blank(), panel.border = 
-#          element_rect(color = 'black', fill = NA),
-#        legend.box.background = element_rect(color = 'black')) +
-#  theme_void() +
-#  geom_text(aes(label = percent(percent/100)), position = position_stack(vjust = 0.5), size = 2) +
-#  scale_fill_manual(values = pie_Palette) +
-#  labs(fill = 'smBGC class')
-#dev.off()
+library(plotly) # load plotly for plotting
 
-library(plotly)
-
-#png(filename = 'pie_chart.png', units = 'in', width = 6, height = 5, res = 500)
+# create the pie chart and save it
 plot_ly(draft_pie, labels = ~Secondary_metabolite_class, values = ~Freq, type = 'pie',
         textposition = 'inside',
         textinfo = 'label+percent+value',
@@ -306,10 +308,10 @@ plot_ly(draft_pie, labels = ~Secondary_metabolite_class, values = ~Freq, type = 
         showlegend = FALSE) %>%
   layout(xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
          yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
-#dev.off()
 htmlwidgets::saveWidget(pie, file = 'pie_chart_Q.html')
 
 
+## NOTE: in the following, a pie chart just for NRPS/PKS distribtuions was created, but was not used in the report.
 # PKS/NRPS pie collapse step
 pknrp_collapsed <- subset(draftContigs_geneclusters, Secondary_metabolite_class %in% c('t1pks', 
                       't1pks-PUFA', 't1pks-PUFA-otherks', 't1pks-otherks', 'otherks', 'transatpks', 
@@ -368,7 +370,6 @@ pknrp_pie %>% ggplot(aes(x = "", y = percent,
   scale_fill_manual(values = pie_Palette) +
   labs(fill = 'PK/NRP class', title = 'Distribution of PK/NRP smBCGs')
 dev.off()
-
 
 
 
@@ -1105,24 +1106,4 @@ rel_ab <- rel_ab %>%
 
 write.table(rel_ab, file = '~/Documents/cariaco/fracPref.txt', quote = FALSE, sep = '\t',
             row.names = FALSE)
-
-#convert data frame from a "wide" format to a "long" format
-
-#odds_ratio <- reshape2::melt(odds_ratio, id = c('sample'))
-
-#odds_ratio %>% ggplot(aes(x = sample, y = colnames(odds_ratio))) + 
-#  geom_point(aes(size = value, fill = variable), alpha = 0.75, shape = 21) + 
-#  scale_size_continuous(limits = c(0.000001, 100), range = c(1,17), breaks = c(1,10,50,75)) + 
-#  labs( x= "", y = "", size = "Relative Abundance (%)", fill = "")  + 
-#  theme(legend.key=element_blank(), 
-#        axis.text.x = element_text(colour = "black", size = 12, face = "bold", angle = 90, vjust = 0.3, hjust = 1), 
-#        axis.text.y = element_text(colour = "black", face = "bold", size = 11), 
-#        legend.text = element_text(size = 10, face ="bold", colour ="black"), 
-#        legend.title = element_text(size = 12, face = "bold"), 
-#        panel.background = element_blank(), panel.border = element_rect(colour = "black", fill = NA, size = 1.2), 
-#        legend.position = "right") +  
-#  scale_y_discrete(limits = rev(levels(odds_ratio$variable)))
-
-
-
 
